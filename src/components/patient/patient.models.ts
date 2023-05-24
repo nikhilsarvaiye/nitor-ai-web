@@ -1,17 +1,17 @@
 import { BaseModel } from '@components/base/models/base.model';
 
-export class ProductMetadata extends BaseModel {
-    variants: ProductVariantModel[] = [];
+export class PatientMetadata extends BaseModel {
+    variants: PatientVariantModel[] = [];
 }
 
-export class ProductModel extends BaseModel {
+export class PatientModel extends BaseModel {
     name: string = '';
     description: string = '';
     department?: string;
     category: string = '';
     type?: string;
     manufacturer?: string;
-    metadata?: ProductMetadata;
+    metadata?: PatientMetadata;
     price: number = 0;
     comparePrice?: number;
     cost: number = 0;
@@ -21,7 +21,7 @@ export class ProductModel extends BaseModel {
     trackQuantity?: boolean;
     sellWhenOutOfStock?: boolean;
     quantity?: number;
-    isPhysicalProduct?: boolean;
+    isPhysicalPatient?: boolean;
     weight?: number;
     weightUnit?: string;
     status?: string;
@@ -29,23 +29,23 @@ export class ProductModel extends BaseModel {
     collections?: string;
     tags: string[] = [];
     hasOptions: boolean = false;
-    options: ProductOptionModel[] = [];
-    variants: ProductVariantModel[] = [];
+    options: PatientOptionModel[] = [];
+    variants: PatientVariantModel[] = [];
 }
 
-export interface ProductOptionModel {
+export interface PatientOptionModel {
     name: string;
     values: string[];
 }
 
-export interface ProductOptionValueModel {
+export interface PatientOptionValueModel {
     value: string;
     price: number;
     quantity?: number;
     sku: string;
 }
 
-export interface ProductVariantModel {
+export interface PatientVariantModel {
     option: string;
     variant: string;
     price: number;

@@ -51,7 +51,7 @@ const _SideNav: FC<{ collapsed: boolean }> = (props) => {
                     <Menu
                         mode="inline"
                         inlineCollapsed={collapsed}
-                        defaultSelectedKeys={['products']}
+                        defaultSelectedKeys={['patients']}
                         style={{
                             backgroundColor: 'transparent',
                             border: 'none',
@@ -76,12 +76,12 @@ const _SideNav: FC<{ collapsed: boolean }> = (props) => {
                                 App Insights
                             </Menu.Item>
                         </NavLink>
-                        <NavLink to="/products">
+                        <NavLink to="/patients">
                             <Menu.Item
-                                key={'products'}
+                                key={'patients'}
                                 icon={<TagOutlined style={{ fontSize: collapsed ? 18 : 14 }} />}
                             >
-                                Products
+                                Patients
                             </Menu.Item>
                         </NavLink>
                         <NavLink to="/users">

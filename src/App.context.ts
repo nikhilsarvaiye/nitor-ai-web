@@ -39,10 +39,7 @@ export class AppStore {
     }
 
     setAppSettings(appSettings: AppSettings) {
-        // appSettings.product = appSettings.product || DefaultSettings.product;
-        // appSettings.productVariant = appSettings.productVariant || DefaultSettings.productVariant;
-        // appSettings.order = appSettings.order || DefaultSettings.order;
-        // appSettings.invoice = appSettings.invoice || DefaultSettings.invoice;
+        // appSettings.patient = appSettings.patient || DefaultSettings.patient;
         // this.settings = (buildAppSetting(appSettings as any) as any) as AppSettings;
     }
 

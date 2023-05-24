@@ -1,13 +1,13 @@
 // import { OrderSetting } from './order/types';
-// import { ProductSetting, ProductVariantSetting } from './product/types';
+// import { PatientSetting, PatientVariantSetting } from './patient/types';
 // import { InvoiceSetting } from './invoice/types';
 
 export enum SettingType {
     User = 1,
-    Product = 2,
+    Patient = 2,
     Order = 3,
     Invoice = 4,
-    ProductVariant = 5,
+    PatientVariant = 5,
 }
 
 export interface AppSetting {
@@ -15,10 +15,10 @@ export interface AppSetting {
 }
 
 export interface AppSettings {
-    // product: ProductSetting;
-    // productVariant: ProductVariantSetting;
+    // patient: PatientSetting;
+    // patientVariant: PatientVariantSetting;
     // order: OrderSetting;
     // invoice: InvoiceSetting;
 }
 
-// export type { ProductSetting, ProductVariantSetting, OrderSetting, InvoiceSetting };
+// export type { PatientSetting, PatientVariantSetting, OrderSetting, InvoiceSetting };

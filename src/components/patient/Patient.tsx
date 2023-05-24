@@ -1,6 +1,5 @@
-import { useState } from 'react';
 import { observer } from 'mobx-react-lite';
-import { DeleteFilled, PlusOutlined } from '@ant-design/icons';
+import { PlusOutlined } from '@ant-design/icons';
 import {
     Button,
     Col,
@@ -12,47 +11,38 @@ import {
     Checkbox,
     Divider,
     Spin,
-    Tooltip,
     Table,
     Typography,
 } from 'antd';
 import * as yup from 'yup';
-import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import { VerticalSpace } from '@library/VerticalSpace';
 import { Card } from '@library/Card';
 import { Upload } from '@library/upload';
-import { productStore } from '@components/product/InitProducts';
+import { patientStore } from '@components/patient/InitPatients';
 import { Center } from '@library/center';
 import { yupSync } from '@library/util/validations';
 import { BaseForm } from '@components/base/components/BaseForm';
-import { ProductTags } from './ProductTags';
-import { ProductCategoryPicker } from './pickers';
-import { ProductTypePicker } from './pickers/ProductTypePicker';
-import { ProductStatus } from './pickers/ProductStatus';
-import { ProductOptions } from './pickers/ProductOptions';
-import { ProductModel } from './product.models';
-import useFormInstance from 'antd/es/form/hooks/useFormInstance';
+import { PatientModel } from './patient.models';
 import { DeleteButton } from '@library/DeleteButton';
-import { RichTextArea } from '@library/RichTextArea';
 
 const schema = yup.object().shape({
-    name: yup.string().nullable().required('Please provide Product title'),
+    name: yup.string().nullable().required('Please provide Patient title'),
     description: yup.string().nullable(),
-    price: yup.number().nullable().required('Please provide Product price'),
+    price: yup.number().nullable().required('Please provide Patient price'),
     comparePrice: yup.number().nullable(),
     chargeTax: yup.bool().nullable(),
-    cost: yup.number().nullable().required('Please provide Product cost'),
-    sku: yup.string().nullable().required('Please provide Product SKU'),
+    cost: yup.number().nullable().required('Please provide Patient cost'),
+    sku: yup.string().nullable().required('Please provide Patient SKU'),
     barcode: yup.string().nullable(),
     trackQuantity: yup.bool().nullable(),
     sellWhenOutOfStock: yup.bool().nullable(),
-    quantity: yup.number().nullable().required('Please provide Product quantity in Stock'),
-    isPhysicalProduct: yup.boolean().nullable(),
+    quantity: yup.number().nullable().required('Please provide Patient quantity in Stock'),
+    isPhysicalPatient: yup.boolean().nullable(),
     weight: yup.number().nullable(),
     weightUnit: yup.string().nullable(),
-    category: yup.string().nullable().required('Please provide Product category'),
-    subCategory: yup.string().nullable().required('Please provide Product sub category'),
+    category: yup.string().nullable().required('Please provide Patient category'),
+    subCategory: yup.string().nullable().required('Please provide Patient sub category'),
     status: yup.string().nullable(),
     brand: yup.string().nullable(),
     manufacturer: yup.string().nullable(),
@@ -63,12 +53,12 @@ const schema = yup.object().shape({
     options: yup.array().nullable(),
 });
 
-const _Product = () => {
+const _Patient = () => {
     const [form] = Form.useForm();
 
     const onFormValueChange = (changesValues: any, values: any) => {
         if (changesValues.options) {
-            const model = productStore.setVariants(values as ProductModel);
+            const model = patientStore.setVariants(values as PatientModel);
             form.setFieldsValue(model);
         }
     };
@@ -76,42 +66,33 @@ const _Product = () => {
     return (
         <BaseForm
             form={form}
-            store={productStore as any}
+            store={patientStore as any}
             validationSchema={schema}
             onFormValueChange={onFormValueChange}
         >
             <Row>
                 {/* Left */}
                 <Col span={16}>
-                    <ProductGeneral />
+                    <PatientGeneral />
                     <VerticalSpace size="lg" />
-                    <ProductPricing />
+                    <PatientPricing />
                     <VerticalSpace size="lg" />
-                    <ProductInventory />
+                    <PatientInventory />
                     <VerticalSpace size="lg" />
-                    <ProductVariants />
-                    <VerticalSpace size="lg" />
-                    <ProductDetails />
-                    {/* <VerticalSpace size="lg" />
-                    <ProductVariants /> */}
+                    <PatientDetails />
                 </Col>
 
                 {/* Right */}
                 <Col span={7} offset={1}>
-                    <ProductMedia />
-                    <VerticalSpace size="lg" />
-                    <ProductStatusCard />
-                    <VerticalSpace size="lg" />
-                    <ProductOrganization />
-                    <VerticalSpace size="lg" />
-                    <ProductShipping />
+                    <PatientMedia />
+                    <PatientShipping />
                 </Col>
             </Row>
         </BaseForm>
     );
 };
 
-const ProductGeneral = () => {
+const PatientGeneral = () => {
     return (
         <Card title="General">
             <Form.Item label="Title" name="name" rules={[yupSync(schema)]}>
@@ -120,24 +101,21 @@ const ProductGeneral = () => {
             <Form.Item label="Description" name="description" rules={[yupSync(schema)]}>
                 <Input.TextArea />
             </Form.Item>
-            <Form.Item label="Tags" name="tags" rules={[yupSync(schema)]}>
-                <ProductTags />
-            </Form.Item>
         </Card>
     );
 };
 
-const ProductDetails = () => {
+const PatientDetails = () => {
     return (
         <Card title="Additional Details">
-            <ProductDetailsSection />
+            <PatientDetailsSection />
             <VerticalSpace size="lg" />
-            <ProductFeaturesSection />
+            <PatientFeaturesSection />
         </Card>
     );
 };
 
-const ProductDetailsSection = () => {
+const PatientDetailsSection = () => {
     const formItemStyle = {
         margin: 0,
     };
@@ -236,7 +214,7 @@ const ProductDetailsSection = () => {
     );
 };
 
-const ProductFeaturesSection = () => {
+const PatientFeaturesSection = () => {
     const formItemStyle = {
         margin: 0,
     };
@@ -318,11 +296,11 @@ const ProductFeaturesSection = () => {
     );
 };
 
-const ProductMedia = observer(() => {
+const PatientMedia = observer(() => {
     return (
         <Card title="Media">
-            {productStore.selectedItem.uploadStore ? (
-                <Upload store={productStore.selectedItem.uploadStore} multiple />
+            {patientStore.selectedItem.uploadStore ? (
+                <Upload store={patientStore.selectedItem.uploadStore} multiple />
             ) : (
                 <Center>
                     <Spin spinning={true} size={'small'} />
@@ -332,7 +310,7 @@ const ProductMedia = observer(() => {
     );
 });
 
-const ProductPricing = () => {
+const PatientPricing = () => {
     return (
         <Card title="Pricing">
             <Row justify={'space-between'}>
@@ -362,7 +340,7 @@ const ProductPricing = () => {
                 </Col>
             </Row>
             <Form.Item name="chargeTax" valuePropName="checked" rules={[yupSync(schema)]}>
-                <Checkbox>Charge tax on this Product</Checkbox>
+                <Checkbox>Charge tax on this Patient</Checkbox>
             </Form.Item>
             <Divider />
             <Form.Item label="Cost per item" name="cost" rules={[yupSync(schema)]}>
@@ -377,7 +355,7 @@ const ProductPricing = () => {
     );
 };
 
-const ProductInventory = () => {
+const PatientInventory = () => {
     return (
         <Card title="Inventory">
             <Row justify={'space-between'}>
@@ -410,11 +388,11 @@ const ProductInventory = () => {
     );
 };
 
-const ProductShipping = () => {
+const PatientShipping = () => {
     return (
         <Card title="Shipping">
-            <Form.Item name="isPhysicalProduct" valuePropName="checked" rules={[yupSync(schema)]}>
-                <Checkbox>This is a physical product</Checkbox>
+            <Form.Item name="isPhysicalPatient" valuePropName="checked" rules={[yupSync(schema)]}>
+                <Checkbox>This is a physical patient</Checkbox>
             </Form.Item>
             <Divider />
             <Row justify={'start'}>
@@ -448,255 +426,5 @@ const ProductShipping = () => {
     );
 };
 
-const ProductOptionsSection = () => {
-    const formItemStyle = {
-        margin: 0,
-    };
-    return (
-        <Form.List name="options">
-            {(options, { add, remove }, { errors }) => (
-                <Card
-                    title={
-                        <Row justify={'space-between'}>
-                            <Typography.Text>Options</Typography.Text>
-                            <Button
-                                onClick={() => {
-                                    add();
-                                }}
-                                type="link"
-                                icon={<PlusOutlined />}
-                            >
-                                Add
-                            </Button>
-                        </Row>
-                    }
-                    type="inner"
-                >
-                    <Table
-                        showHeader={false}
-                        columns={[
-                            {
-                                title: 'Option',
-                                dataIndex: 'option',
-                                render: (value, record, index) => {
-                                    return (
-                                        <Form.Item
-                                            name={[index, 'name']}
-                                            isListField
-                                            {...value}
-                                            validateTrigger={['onChange', 'onBlur']}
-                                            style={formItemStyle}
-                                        >
-                                            <ProductOptions placeholder="Name" />
-                                        </Form.Item>
-                                    );
-                                },
-                            },
-                            {
-                                title: 'Values',
-                                dataIndex: 'values',
-                                render: (value, record, index) => {
-                                    return (
-                                        <Form.Item
-                                            name={[index, 'values']}
-                                            isListField
-                                            {...value}
-                                            validateTrigger={['onChange', 'onBlur']}
-                                            style={formItemStyle}
-                                        >
-                                            <Select
-                                                placeholder="Values"
-                                                mode="tags"
-                                                allowClear
-                                                autoClearSearchValue
-                                            ></Select>
-                                        </Form.Item>
-                                    );
-                                },
-                            },
-                            {
-                                title: 'Delete',
-                                dataIndex: 'delete',
-                                render: (value, record, index) => {
-                                    return <DeleteButton onClick={() => remove(index)} />;
-                                },
-                            },
-                        ]}
-                        pagination={{
-                            hideOnSinglePage: true,
-                        }}
-                        dataSource={options}
-                    ></Table>
-                </Card>
-            )}
-        </Form.List>
-    );
-};
 
-const ProductVariants = () => {
-    return (
-        <Card
-            title="Variants"
-            extra={
-                <Typography.Text disabled>
-                    Specify product option variant details, like price, quantity or sku
-                </Typography.Text>
-            }
-        >
-            <ProductOptionsSection />
-            <VerticalSpace size="lg" />
-            <ProductVariantSection />
-        </Card>
-    );
-};
-
-const ProductVariantSection = () => {
-    const formItemStyle = {
-        margin: 0,
-    };
-    return (
-        <Form.List name="variants">
-            {(variants, { add, remove }, { errors }) => variants.length ? (
-                <Card
-                    title={
-                        <Row justify={'space-between'}>
-                            <Typography.Text>Variants</Typography.Text>
-                            <Button
-                                onClick={() => {
-                                    add();
-                                }}
-                                type="link"
-                                icon={<PlusOutlined />}
-                            >
-                                Add
-                            </Button>
-                        </Row>
-                    }
-                    type="inner"
-                >
-                    <Table
-                        showHeader={false}
-                        columns={[
-                            {
-                                title: 'Variant',
-                                dataIndex: 'variant',
-                                render: (value, record, index) => {
-                                    return (
-                                        <Form.Item
-                                            name={[index, 'variant']}
-                                            isListField
-                                            {...value}
-                                            validateTrigger={['onChange', 'onBlur']}
-                                            style={formItemStyle}
-                                        >
-                                            <Input readOnly />
-                                        </Form.Item>
-                                    );
-                                },
-                            },
-                            {
-                                title: 'Price',
-                                dataIndex: 'price',
-                                render: (value, record, index) => {
-                                    return (
-                                        <Form.Item
-                                            name={[index, 'price']}
-                                            isListField
-                                            {...value}
-                                            validateTrigger={['onChange', 'onBlur']}
-                                            style={formItemStyle}
-                                        >
-                                            <InputNumber
-                                                placeholder="Price"
-                                                style={{
-                                                    width: '100%',
-                                                }}
-                                            />
-                                        </Form.Item>
-                                    );
-                                },
-                            },
-                            {
-                                title: 'Quantity',
-                                dataIndex: 'quantity',
-                                render: (value, record, index) => {
-                                    return (
-                                        <Form.Item
-                                            name={[index, 'quantity']}
-                                            isListField
-                                            {...value}
-                                            validateTrigger={['onChange', 'onBlur']}
-                                            style={formItemStyle}
-                                        >
-                                            <InputNumber
-                                                placeholder="Quantity"
-                                                style={{
-                                                    width: '100%',
-                                                }}
-                                            />
-                                        </Form.Item>
-                                    );
-                                },
-                            },
-                            {
-                                title: 'SKU',
-                                dataIndex: 'sku',
-                                render: (value, record, index) => {
-                                    return (
-                                        <Form.Item
-                                            name={[index, 'sku']}
-                                            isListField
-                                            {...value}
-                                            validateTrigger={['onChange', 'onBlur']}
-                                            style={formItemStyle}
-                                        >
-                                            <Input placeholder="SKU" />
-                                        </Form.Item>
-                                    );
-                                },
-                            },
-                        ]}
-                        pagination={{
-                            hideOnSinglePage: true,
-                        }}
-                        dataSource={variants}
-                    ></Table>
-                </Card>
-            ) : <></>}
-        </Form.List>
-    );
-};
-
-const ProductStatusCard = () => {
-    return (
-        <Card title="Product Status">
-            <Form.Item label="Status" name="status" rules={[yupSync(schema)]}>
-                <ProductStatus />
-            </Form.Item>
-        </Card>
-    );
-};
-
-const ProductOrganization = () => {
-    return (
-        <Card title="Product Organization">
-            <Form.Item label="Category" name="category" rules={[yupSync(schema)]}>
-                <ProductCategoryPicker />
-            </Form.Item>
-            <Form.Item label="Sub Category" name="subCategory" rules={[yupSync(schema)]}>
-                <ProductTypePicker placeholder="e.g. T-Shirt" />
-            </Form.Item>
-            <Form.Item label="Brand" name="brand" rules={[yupSync(schema)]}>
-                <Input />
-            </Form.Item>
-            <Form.Item label="Manufacturer" name="manufacturer" rules={[yupSync(schema)]}>
-                <Input />
-            </Form.Item>
-            <Form.Item label="Vendor" name="vendor" rules={[yupSync(schema)]}>
-                <Input />
-            </Form.Item>
-        </Card>
-    );
-};
-
-export const Product = observer(_Product);
+export const Patient = observer(_Patient);

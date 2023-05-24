@@ -2,23 +2,21 @@ import { Button, Col, Form, Input, Row, Tag } from 'antd';
 import { useNavigate } from 'react-router-dom';
 import { BaseList } from '@components/base/components/BaseList';
 import { ColumnGroupType, ColumnType } from 'antd/es/table';
-import { ProductCategoryPicker } from './pickers';
-import { ProductStatus } from './pickers/ProductStatus';
-import { productStore } from './InitProducts';
+import { patientStore } from './InitPatients';
 
-export const Products = () => {
+export const Patients = () => {
     const navigator = useNavigate();
     const columns = [
         {
             dataIndex: 'name',
-            title: 'Product Name',
+            title: 'Patient Name',
             render: (value: any, record: any, index: number) => {
                 return (
                     <Button
                         type="link"
                         onClick={() => {
                             navigator(
-                                `/${productStore.titles.listName.toLocaleLowerCase()}/${record.id}`,
+                                `/${patientStore.titles.listName.toLocaleLowerCase()}/${record.id}`,
                             );
                         }}
                     >
@@ -57,25 +55,10 @@ export const Products = () => {
                             <Input placeholder="Search by name" />
                         </Form.Item>
                     </Col>
-                    <Col span={6} offset={1}>
-                        <Form.Item name={'category'}>
-                            <ProductCategoryPicker
-                                style={{
-                                    width: '100%',
-                                }}
-                                placeholder="Search by Category"
-                            />
-                        </Form.Item>
-                    </Col>
-                    <Col span={6} offset={1}>
-                        <Form.Item name={'status'}>
-                            <ProductStatus placeholder="Search by Status" allowClear />
-                        </Form.Item>
-                    </Col>
                 </Row>
             }
             columns={columns}
-            store={productStore as any}
+            store={patientStore as any}
         />
     );
 };

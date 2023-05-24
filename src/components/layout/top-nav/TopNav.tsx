@@ -60,7 +60,6 @@ const _TopNav: FC<{ collapsed: boolean; onCollapsed: (isCollapsed: boolean) => v
                             })}
                         </Space>
                     </Row>
-                    {/* <Col>{showProductFilter && <ProductFilter onApply={() => {}} />}</Col> */}
                 </Col>
                 <Col span={8}>
                     <Row>

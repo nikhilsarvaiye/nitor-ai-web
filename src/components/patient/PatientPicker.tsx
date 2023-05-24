@@ -1,21 +1,21 @@
 import { useState, useEffect } from 'react';
 import { Select, Spin } from 'antd';
 import { useDebounce } from '@util/debounce';
-import { ProductModel } from './product.models';
-import { productService } from './InitProducts';
+import { PatientModel } from './patient.models';
+import { patientService } from './InitPatients';
 
 export interface UserPickerProps {
-    onChange?: (productId: string, user?: ProductModel) => void;
+    onChange?: (patientId: string, user?: PatientModel) => void;
     value?: string;
     variant?: boolean;
     placeholder?: string;
 }
 
-export const ProductPicker = (props: UserPickerProps) => {
-    const [products, setProducts] = useState<ProductModel[]>([]);
+export const PatientPicker = (props: UserPickerProps) => {
+    const [patients, setPatients] = useState<PatientModel[]>([]);
     const [loading, setLoading] = useState<boolean>(false);
 
-    const getProducts = async (key?: string) => {
+    const getPatients = async (key?: string) => {
         try {
             setLoading(true);
             const queryOptions = {
@@ -47,9 +47,9 @@ export const ProductPicker = (props: UserPickerProps) => {
                 select: ['id', 'name', 'variants', 'price'],
                 top: 20,
             } as any;
-            const products = await productService.list(queryOptions);
+            const patients = await patientService.list(queryOptions);
             if (props.variant) {
-                const productVariants = products.flatMap((x) => {
+                const patientVariants = patients.flatMap((x) => {
                     return (x.variants || []).map((v) => {
                         return {
                             ...x,
@@ -58,9 +58,9 @@ export const ProductPicker = (props: UserPickerProps) => {
                         };
                     });
                 });
-                setProducts(productVariants);
+                setPatients(patientVariants);
             } else {
-                setProducts(products);
+                setPatients(patients);
             }
         } finally {
             setLoading(false);
@@ -68,16 +68,16 @@ export const ProductPicker = (props: UserPickerProps) => {
     };
 
     // useEffect(() => {
-    //     getProducts();
+    //     getPatients();
     // }, []);
 
     useEffect(() => {
-        // if (props.value && !products.find((x) => x.id === props.value)) {
-        //     getProducts(props.value);
+        // if (props.value && !patients.find((x) => x.id === props.value)) {
+        //     getPatients(props.value);
         // } else if (!props.value) {
-        //     getProducts();
+        //     getPatients();
         // }
-        getProducts();
+        getPatients();
     }, [props.value]);
 
     const { Option } = Select;
@@ -86,7 +86,7 @@ export const ProductPicker = (props: UserPickerProps) => {
         <Select
             {...props}
             onChange={(id: string) => {
-                const item = products.find(
+                const item = patients.find(
                     (x) => (props.variant ? (x as any).variantId : x.id) === id,
                 );
                 if (props.onChange) {
@@ -98,7 +98,7 @@ export const ProductPicker = (props: UserPickerProps) => {
             autoClearSearchValue
             loading={loading}
             onSearch={useDebounce((value: string) => {
-                getProducts(value);
+                getPatients(value);
             })}
             filterOption={(input, option) => {
                 return option?.title.toLowerCase().indexOf(input.toLowerCase()) >= 0;
@@ -106,7 +106,7 @@ export const ProductPicker = (props: UserPickerProps) => {
             notFoundContent={loading ? <Spin spinning={loading}></Spin> : null}
             style={{ width: '100%' }}
         >
-            {products.map((x) => {
+            {patients.map((x) => {
                 return (
                     <Option
                         value={props.variant ? (x as any).variantId : x.id}

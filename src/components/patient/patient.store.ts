@@ -2,19 +2,19 @@ import { makeObservable, observable } from 'mobx';
 import { QueryOptions } from 'odata-query';
 import { SortOrder } from '@library/table/table.models';
 import { BaseStore } from '@components/base/stores';
-import { ProductModel } from './product.models';
-import { ProductService } from './product.service';
+import { PatientModel } from './patient.models';
+import { PatientService } from './patient.service';
 import { UploadStore } from '@library/upload';
 
-export class ProductStore extends BaseStore<ProductModel> {
+export class PatientStore extends BaseStore<PatientModel> {
     defaultValues: any = {
         id: '',
         uploadFiles: [],
         uploadStore: new UploadStore(),
     };
     titles = {
-        name: 'Product',
-        listName: 'Products',
+        name: 'Patient',
+        listName: 'Patients',
     };
     searchCriteria = {
         page: 1,
@@ -23,16 +23,16 @@ export class ProductStore extends BaseStore<ProductModel> {
         sortOrder: SortOrder.Descend,
         name: '',
     } as any;
-    constructor(productService: ProductService) {
-        super(productService);
+    constructor(patientService: PatientService) {
+        super(patientService);
         makeObservable(this, {
             searchCriteria: observable,
         });
     }
 
     buildQueryOptions = (
-        queryOptions?: Partial<QueryOptions<ProductModel>>,
-    ): Partial<QueryOptions<ProductModel>> => {
+        queryOptions?: Partial<QueryOptions<PatientModel>>,
+    ): Partial<QueryOptions<PatientModel>> => {
         queryOptions = this.buildDefaultQueryOptions(queryOptions);
         queryOptions.filter = {
             and: [
@@ -69,7 +69,7 @@ export class ProductStore extends BaseStore<ProductModel> {
         return queryOptions;
     };
 
-    setVariants(model: ProductModel) {
+    setVariants(model: PatientModel) {
         model.options = model.options || [];
         model.variants = model.variants || [];
         // remove the ones not used
