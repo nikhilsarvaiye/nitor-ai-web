@@ -1,0 +1,29 @@
+.ant-upload-picture-card-wrapper {
+    &.has-metadata {
+        &.has-files {
+            margin-bottom: 3em;
+        }
+    }
+    &.full-width {
+        .ant-upload, .ant-upload-list-item-container {
+            width: 100% !important;
+            height: 180px !important;
+        }
+    }
+    .item {
+        &:hover {
+            .default {
+                display: block;
+            }
+        }
+        .default {
+            display: block;
+            margin-top: 0.3em;
+            text-align: center;
+            button {
+                font-size: 1.1rem;
+                line-height: 1.5715;
+            }
+        }
+    }
+}

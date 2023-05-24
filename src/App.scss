@@ -1,0 +1,82 @@
+$textColor: #636060;
+$primaryColor: rgb(24, 144, 255);
+
+/* antd Table */
+/* Sider Menu */
+.ant-table {
+    width: 100%;
+
+    .ant-table-wrapper {
+        .ant-table-tbody {
+            > tr {
+                > td {
+                    padding: 1vh 10px;
+                }
+            }
+        }
+        .ant-table-thead {
+            > tr {
+                > th {
+                    background: transparent;
+                }
+            }
+        }
+    }
+}
+.ant-input-number.plain-text {
+    border: none;
+}
+.ant-input-number.plain-text.strong {
+    input {
+        font-weight: 600;
+    }
+}
+
+/* Sider Menu */
+.ant-menu {
+    a {
+        color: $textColor !important;
+        font-size: 15px;
+        li {
+            color: $textColor !important;
+            font-size: 15px;
+            &:hover {
+                color: $textColor !important;
+                font-size: 15px;
+            }
+        }
+        .ant-menu-item {
+            padding-left: 24px !important;
+            margin: 15px 10%;
+            width: 80%;
+            height: 45px;
+            line-height: 45px;
+            font-weight: 500;
+        }
+    }
+    .active {
+        .ant-menu-item {
+            color: $primaryColor !important;
+            font-weight: 700;
+            &:focus {
+                color: $primaryColor !important;
+                font-weight: 700;
+            }
+            &:active {
+                color: $primaryColor !important;
+                font-weight: 700;
+            }
+            &:hover {
+                color: $primaryColor !important;
+                font-weight: 700;
+            }
+        }
+    }
+}
+.ant-menu-inline-collapsed {
+    .ant-menu-item {
+        .ant-menu-title-content {
+            display: none;
+        }
+    }
+}
