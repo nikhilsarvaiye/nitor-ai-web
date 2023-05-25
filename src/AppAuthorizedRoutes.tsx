@@ -7,6 +7,7 @@ import { ReportRoutes } from '@components/report/ReportRoutes';
 import { ClinicalRoutes } from '@components/clinical/ClinicalRoutes';
 import { ClaimRoutes } from '@components/claim/ClaimRoutes';
 import { PlanRoutes } from '@components/plan/PlanRoutes';
+import { RiskRoutes } from '@components/risk/RiskRoutes';
 
 const router = createBrowserRouter([
     {
@@ -21,6 +22,7 @@ const router = createBrowserRouter([
             ClinicalRoutes,
             ClaimRoutes,
             PlanRoutes,
+            RiskRoutes,
             UserRoutes,
             ReportRoutes,
         ],

@@ -1,7 +1,7 @@
 import { FC, useEffect, useState } from 'react';
 import { observer } from 'mobx-react';
 import { Affix, ConfigProvider, Menu, theme } from 'antd';
-import { AreaChartOutlined, MobileOutlined, TagOutlined, UserOutlined } from '@ant-design/icons';
+import { AreaChartOutlined, DatabaseOutlined, MobileOutlined, TagOutlined, UserOutlined } from '@ant-design/icons';
 import { Styles } from '@library/styles';
 import Sider from 'antd/es/layout/Sider';
 import { NavLink } from 'react-router-dom';
@@ -64,7 +64,7 @@ const _SideNav: FC<{ collapsed: boolean }> = (props) => {
                         <NavLink to="/patients">
                             <Menu.Item
                                 key={'patients'}
-                                icon={<TagOutlined style={{ fontSize: collapsed ? 18 : 14 }} />}
+                                icon={<UserOutlined style={{ fontSize: collapsed ? 18 : 14 }} />}
                             >
                                 Patients
                             </Menu.Item>
@@ -72,7 +72,7 @@ const _SideNav: FC<{ collapsed: boolean }> = (props) => {
                         <NavLink to="/clinicals">
                             <Menu.Item
                                 key={'clinicals'}
-                                icon={<TagOutlined style={{ fontSize: collapsed ? 18 : 14 }} />}
+                                icon={<DatabaseOutlined style={{ fontSize: collapsed ? 18 : 14 }} />}
                             >
                                 Clinicals
                             </Menu.Item>

@@ -11,6 +11,8 @@ import { IModel } from '../models';
 import { BaseStore } from '../stores';
 
 export interface BaseListProps {
+    headerTitle?: string;
+    topContent?: ReactNode;
     store: BaseStore<IModel>;
     searchFormFields?: ReactNode;
     headerCenterContent?: ReactNode;
@@ -24,6 +26,8 @@ export interface BaseListProps {
     enableDelete?: boolean;
     hideSearch?: boolean;
     rowSelectionType?: RowSelectionType;
+    hideNew?: boolean;
+    hideDelete?: boolean;
     // loading: boolean;
     // data: any[];
     // onChange: (
@@ -115,16 +119,19 @@ const _BaseList = (props: BaseListAdditionalProps) => {
     };
 
     useEffect(() => {
+        props.store.clearSelectedItem();
         props.store.search(props.store.searchCriteria);
     }, [props.store]);
 
     return (
         <ContentListLayout
-            title={props.store.titles.listName}
+            title={props.headerTitle || props.store.titles.listName}
             headerCenterContent={props.headerCenterContent}
             headerRightContent={
-                props.headerRightContent || (
-                    <Space>
+                <Space>
+                    {props.hideSearch ? (
+                        <></>
+                    ) : (
                         <Button
                             onClick={() => {
                                 setSearch(!search);
@@ -134,18 +141,27 @@ const _BaseList = (props: BaseListAdditionalProps) => {
                         >
                             Show Search
                         </Button>
+                    )}
+
+                    {props.hideNew ? (
+                        <></>
+                    ) : (
                         <Button type="primary" icon={<PlusOutlined />} onClick={onNew}>
                             New
                         </Button>
-                        {props.store.selectedItems.length > 0 && (
-                            <Button type="dashed" icon={<DeleteOutlined />} onClick={onDelete}>
-                                Delete
-                            </Button>
-                        )}
-                    </Space>
-                )
+                    )}
+                    {props.hideDelete || props.store.selectedItems.length === 0 ? (
+                        <></>
+                    ) : (
+                        <Button type="dashed" icon={<DeleteOutlined />} onClick={onDelete}>
+                            Delete
+                        </Button>
+                    )}
+                    {props.headerRightContent}
+                </Space>
             }
         >
+            {props.topContent}
             {!props.hideSearch && search && (
                 <Form
                     form={searchForm}

@@ -3,8 +3,10 @@ import { useNavigate } from 'react-router-dom';
 import { BaseList } from '@components/base/components/BaseList';
 import { ColumnGroupType, ColumnType } from 'antd/es/table';
 import { patientStore } from './InitPatients';
+import { CalculatorOutlined } from '@ant-design/icons';
+import { observer } from 'mobx-react';
 
-export const Patients = () => {
+const _Patients = () => {
     const navigator = useNavigate();
 
     const columns = [
@@ -249,6 +251,19 @@ export const Patients = () => {
             }
             columns={columns}
             store={patientStore as any}
+            headerRightContent={
+                patientStore.selectedItems.length > 0 ? (
+                    <Button type="primary" icon={<CalculatorOutlined />} onClick={() => {
+                        navigator('/risk')
+                    }}>
+                        Calculate Risk Using ACG
+                    </Button>
+                ) : (
+                    <></>
+                )
+            }
         />
     );
 };
+
+export const Patients = observer(_Patients);

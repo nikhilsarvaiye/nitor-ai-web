@@ -56,12 +56,7 @@ const schema = yup.object().shape({
 const _Patient = () => {
     const [form] = Form.useForm();
 
-    const onFormValueChange = (changesValues: any, values: any) => {
-        if (changesValues.options) {
-            const model = patientStore.setVariants(values as PatientModel);
-            form.setFieldsValue(model);
-        }
-    };
+    const onFormValueChange = (changesValues: any, values: any) => {};
 
     return (
         <BaseForm

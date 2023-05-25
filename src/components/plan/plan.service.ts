@@ -3,6 +3,26 @@ import { IService } from '@components/base/services/iservice';
 import { PlanModel } from './plan.models';
 import { IPageResponse } from '@components/base/models';
 import { QueryOptions } from 'odata-query';
+import { AxiosRequestConfig } from 'axios';
+import { Api } from '@components/base/api/base.api';
+
+const data = [
+    {
+        id: '81a701f2-ce1b-1119-171c-d939509ba8e5',
+        patientName: 'Edwina Witting',
+        createdDate: '25/5/2023',
+    },
+    {
+        id: '81a701f2-ce1b-1119-171c-d939509ba8e5',
+        patientName: 'Donny Welsch',
+        createdDate: '20/5/2023',
+    },
+    {
+        id: '81a701f2-ce1b-1119-171c-d939509ba8e5',
+        patientName: 'Iola Muller',
+        createdDate: '11/4/2023',
+    },
+];
 
 export class PlanService extends BaseService<PlanModel> implements IService<PlanModel> {
     constructor() {
@@ -12,144 +32,31 @@ export class PlanService extends BaseService<PlanModel> implements IService<Plan
     paginate = async (
         queryOptions?: Partial<QueryOptions<PlanModel>>,
     ): Promise<IPageResponse<PlanModel>> => {
-        const data = {
+        const pageData = {
             count: 3,
-            items: [
-                {
-                    id: '81a701f2-ce1b-1119-171c-d939509ba8e5',
-                    dob: '11/2/1953',
-                    prefix: 'Mrs',
-                    firstName: 'Carletta',
-                    lastName: 'Klein',
-                    maiden: '--',
-                    marital: 'D',
-                    race: 'white',
-                    ethnicity: 'nonhispanic',
-                    gender: 'F',
-                    address: '233 Flatley Gateway Apt 11',
-                    city: 'Randolph',
-                    state: 'Massachusetts',
-                    county: 'Norfolk County',
-                    fips: '21021',
-                    zip: '2368',
-                    healthcareExpenses: '1025728.61',
-                    healthCareCoverage: '474780.24',
-                    income: '47691',
-                    allergiesCode: '',
-                    allergiesDesc: '',
-                    allergiesReaction: '',
-                    iCondCode: '73591000, 444814009,422610009, 423311002, 39848009, 10109002',
-                    aCondCode: '162864005, 239872002, 48724000, 267020005, 706893006, 254837009',
-                    iCondDesc:
-                        'Whiplash injury to neck, Acute bronchitis(disorder), Viral sinusitis(disorder), Limited social contact(finding), Social isolation(finding), Stress(finding)',
-                    aCondDesc:
-                        'Malignant neoplasm of breast(disorder), Osteoarthritis of hip, History of tubal ligation(situation), Mitral valve regurgitation(disorder), Victim of intimate partner abuse(finding), Body mass index 30+ - obesity(finding)',
-                    iMedCode: '\t745752, 313782, 849574, 896001',
-                    aMedCode: '745752, 896001',
-                    iMedDesc:
-                        'Acetaminophen 325 MG Oral Tablet, Naproxen sodium 220 MG Oral Tablet, 120 ACTUAT fluticasone propionate 0.11 MG / ACTUAT Metered Dose Inhaler [Flovent], NDA021457 200 ACTUAT albuterol 0.09 MG / ACTUAT Metered Dose Inhaler [ProAir]',
-                    aMedDesc:
-                        '120 ACTUAT fluticasone propionate 0.11 MG / ACTUAT Metered Dose Inhaler [Flovent], NDA021457 200 ACTUAT albuterol 0.09 MG / ACTUAT Metered Dose Inhaler [ProAir]',
-                    iMedReasonDesc: 'Childhood asthma, Acute bronchitis(disorder)',
-                    aMedReasonDesc: 'Childhood asthma',
-                    totalCost: '21814.23',
-                    procedureCode:
-                        '310417005,410401003, 46706006, 449381000124108, 84478008, 710841007, 385763009, 312681000, 866148006, 225386006, 71651007, 409023009, 763302001, 710824005, 433236007, 428211000124100, 713106006, 430193006, 370789001, 171207006, 25656009, 58000006, 91251008, 181087000, 315639002, 63332003, 762993000, 454711000124102, 73761001',
-                    procedureDesc:
-                        'Assessment using Morse Fall Scale(procedure), Nursing care/ supplementary surveillance(regime / therapy), Bone density scan(procedure), Physical examination  complete(procedure), Mammography(procedure), Replacement of contraceptive intrauterine device, Depression screening using Plan Health Questionnaire Two - Item score(procedure), Physical therapy procedure(regime / therapy), Screening for domestic abuse(procedure), Assessment using Alcohol Use Disorders Identification Test - Consumption(procedure), Assessment of anxiety(procedure), Plan discharge(procedure), Occupational therapy(regime / therapy), Colonoscopy, History AND physical examination(procedure), Professional / ancillary services care(regime / therapy), Development of individualized plan of care(procedure), Assessment of health and social care needs(procedure), Discharge from skilled nursing facility(procedure), Notifications(procedure), Hospice care(regime / therapy), Depression screening(procedure), Medication Reconciliation(procedure), Certification procedure(procedure), Transthoracic echocardiography(procedure), Assessment of substance use(procedure), Screening for drug abuse(procedure), Pre - discharge assessment(procedure), Initial Plan assessment(procedure)',
-                    procedureReasonDesc: 'Malignant neoplasm of breast(disorder)\t',
-                },
-                {
-                    id: '0a2015ef-73f4-f8b0-1c7b-e65004d41e4a',
-                    dob: '11/2/1953',
-                    prefix: 'Mr',
-                    firstName: 'Donny',
-                    lastName: 'Welsch',
-                    maiden: '--',
-                    marital: 'D',
-                    race: 'non white',
-                    ethnicity: 'hispanic',
-                    gender: 'M',
-                    address: '233 Flatley Gateway Apt 11',
-                    city: 'Randolph',
-                    state: 'Massachusetts',
-                    county: 'Norfolk County',
-                    fips: '21021',
-                    zip: '2368',
-                    healthcareExpenses: '1025728.61',
-                    healthCareCoverage: '474780.24',
-                    income: '47691',
-                    allergiesCode: '',
-                    allergiesDesc: '',
-                    allergiesReaction: '',
-                    iCondCode: '73591000, 444814009,422610009, 423311002, 39848009, 10109002',
-                    aCondCode: '162864005, 239872002, 48724000, 267020005, 706893006, 254837009',
-                    iCondDesc:
-                        'Whiplash injury to neck, Acute bronchitis(disorder), Viral sinusitis(disorder), Limited social contact(finding), Social isolation(finding), Stress(finding)',
-                    aCondDesc:
-                        'Malignant neoplasm of breast(disorder), Osteoarthritis of hip, History of tubal ligation(situation), Mitral valve regurgitation(disorder), Victim of intimate partner abuse(finding), Body mass index 30+ - obesity(finding)',
-                    iMedCode: '\t745752, 313782, 849574, 896001',
-                    aMedCode: '745752, 896001',
-                    iMedDesc:
-                        'Acetaminophen 325 MG Oral Tablet, Naproxen sodium 220 MG Oral Tablet, 120 ACTUAT fluticasone propionate 0.11 MG / ACTUAT Metered Dose Inhaler [Flovent], NDA021457 200 ACTUAT albuterol 0.09 MG / ACTUAT Metered Dose Inhaler [ProAir]',
-                    aMedDesc:
-                        '120 ACTUAT fluticasone propionate 0.11 MG / ACTUAT Metered Dose Inhaler [Flovent], NDA021457 200 ACTUAT albuterol 0.09 MG / ACTUAT Metered Dose Inhaler [ProAir]',
-                    iMedReasonDesc: 'Childhood asthma, Acute bronchitis(disorder)',
-                    aMedReasonDesc: 'Childhood asthma',
-                    totalCost: '21814.23',
-                    procedureCode:
-                        '310417005,410401003, 46706006, 449381000124108, 84478008, 710841007, 385763009, 312681000, 866148006, 225386006, 71651007, 409023009, 763302001, 710824005, 433236007, 428211000124100, 713106006, 430193006, 370789001, 171207006, 25656009, 58000006, 91251008, 181087000, 315639002, 63332003, 762993000, 454711000124102, 73761001',
-                    procedureDesc:
-                        'Assessment using Morse Fall Scale(procedure), Nursing care/ supplementary surveillance(regime / therapy), Bone density scan(procedure), Physical examination  complete(procedure), Mammography(procedure), Replacement of contraceptive intrauterine device, Depression screening using Plan Health Questionnaire Two - Item score(procedure), Physical therapy procedure(regime / therapy), Screening for domestic abuse(procedure), Assessment using Alcohol Use Disorders Identification Test - Consumption(procedure), Assessment of anxiety(procedure), Plan discharge(procedure), Occupational therapy(regime / therapy), Colonoscopy, History AND physical examination(procedure), Professional / ancillary services care(regime / therapy), Development of individualized plan of care(procedure), Assessment of health and social care needs(procedure), Discharge from skilled nursing facility(procedure), Notifications(procedure), Hospice care(regime / therapy), Depression screening(procedure), Medication Reconciliation(procedure), Certification procedure(procedure), Transthoracic echocardiography(procedure), Assessment of substance use(procedure), Screening for drug abuse(procedure), Pre - discharge assessment(procedure), Initial Plan assessment(procedure)',
-                    procedureReasonDesc: 'Malignant neoplasm of breast(disorder)\t',
-                },
-                {
-                    id: '8f1f14d4-3df2-110a-d30e-92bf2a22c6b2',
-                    dob: '11/2/1953',
-                    prefix: 'Ms',
-                    firstName: 'Iola',
-                    lastName: 'Muller',
-                    maiden: '--',
-                    marital: 'D',
-                    race: 'white',
-                    ethnicity: 'nonhispanic',
-                    gender: 'F',
-                    address: '233 Flatley Gateway Apt 11',
-                    city: 'Randolph',
-                    state: 'Massachusetts',
-                    county: 'Norfolk County',
-                    fips: '21021',
-                    zip: '2368',
-                    healthcareExpenses: '1025728.61',
-                    healthCareCoverage: '474780.24',
-                    income: '47691',
-                    allergiesCode: '',
-                    allergiesDesc: '',
-                    allergiesReaction: '',
-                    iCondCode: '73591000, 444814009,422610009, 423311002, 39848009, 10109002',
-                    aCondCode: '162864005, 239872002, 48724000, 267020005, 706893006, 254837009',
-                    iCondDesc:
-                        'Whiplash injury to neck, Acute bronchitis(disorder), Viral sinusitis(disorder), Limited social contact(finding), Social isolation(finding), Stress(finding)',
-                    aCondDesc:
-                        'Malignant neoplasm of breast(disorder), Osteoarthritis of hip, History of tubal ligation(situation), Mitral valve regurgitation(disorder), Victim of intimate partner abuse(finding), Body mass index 30+ - obesity(finding)',
-                    iMedCode: '\t745752, 313782, 849574, 896001',
-                    aMedCode: '745752, 896001',
-                    iMedDesc:
-                        'Acetaminophen 325 MG Oral Tablet, Naproxen sodium 220 MG Oral Tablet, 120 ACTUAT fluticasone propionate 0.11 MG / ACTUAT Metered Dose Inhaler [Flovent], NDA021457 200 ACTUAT albuterol 0.09 MG / ACTUAT Metered Dose Inhaler [ProAir]',
-                    aMedDesc:
-                        '120 ACTUAT fluticasone propionate 0.11 MG / ACTUAT Metered Dose Inhaler [Flovent], NDA021457 200 ACTUAT albuterol 0.09 MG / ACTUAT Metered Dose Inhaler [ProAir]',
-                    iMedReasonDesc: 'Childhood asthma, Acute bronchitis(disorder)',
-                    aMedReasonDesc: 'Childhood asthma',
-                    totalCost: '21814.23',
-                    procedureCode:
-                        '310417005,410401003, 46706006, 449381000124108, 84478008, 710841007, 385763009, 312681000, 866148006, 225386006, 71651007, 409023009, 763302001, 710824005, 433236007, 428211000124100, 713106006, 430193006, 370789001, 171207006, 25656009, 58000006, 91251008, 181087000, 315639002, 63332003, 762993000, 454711000124102, 73761001',
-                    procedureDesc:
-                        'Assessment using Morse Fall Scale(procedure), Nursing care/ supplementary surveillance(regime / therapy), Bone density scan(procedure), Physical examination  complete(procedure), Mammography(procedure), Replacement of contraceptive intrauterine device, Depression screening using Plan Health Questionnaire Two - Item score(procedure), Physical therapy procedure(regime / therapy), Screening for domestic abuse(procedure), Assessment using Alcohol Use Disorders Identification Test - Consumption(procedure), Assessment of anxiety(procedure), Plan discharge(procedure), Occupational therapy(regime / therapy), Colonoscopy, History AND physical examination(procedure), Professional / ancillary services care(regime / therapy), Development of individualized plan of care(procedure), Assessment of health and social care needs(procedure), Discharge from skilled nursing facility(procedure), Notifications(procedure), Hospice care(regime / therapy), Depression screening(procedure), Medication Reconciliation(procedure), Certification procedure(procedure), Transthoracic echocardiography(procedure), Assessment of substance use(procedure), Screening for drug abuse(procedure), Pre - discharge assessment(procedure), Initial Plan assessment(procedure)',
-                    procedureReasonDesc: 'Malignant neoplasm of breast(disorder)\t',
-                },
-            ] as any,
+            items: data as any,
         };
 
-        return new Promise((res) => setTimeout(() => res(data), 500))
+        return new Promise((res) => setTimeout(() => res(pageData), 500));
+    };
+
+    get = async (id: string, config?: AxiosRequestConfig): Promise<PlanModel | null> => {
+        const response = await Api.get<PlanModel>(
+            `https://nitor-ai-api.azurewebsites.net/generate_treatment_plan?id=${id}`,
+            config,
+        );
+        return {
+            diagnosis:
+                'Edwina Witting has been diagnosed with miscarriage in the first trimester, disorder of kidney due to diabetes mellitus, severe anxiety, chronic kidney disease stages 1-4, metabolic syndrome X, proteinuria due to type 2 diabetes mellitus, history of appendectomy, end-stage renal disease, obesity, appendicitis, anemia, social isolation, prediabetes, essential hypertension, microalbuminuria due to type 2 diabetes mellitus, and limited social contact, and is awaiting kidney transplantation.',
+            evaluation:
+                "The goal of Edwina's treatment plan is to improve her physical health, minimize the risk of further health complications, and reduce her anxiety levels",
+            intervention:
+                'Edwina should receive regular medical check-ups, take her prescribed medications, and attend counseling sessions to help her manage her anxiety. She should also follow a healthy diet and exercise routine to improve her physical health and maintain a healthy weight.',
+            longTermGoal:
+                'Edwina should be evaluated regularly over a period of months to ensure that her treatment plan is effective and her health is improving.',
+            shortTermGoal:
+                "Edwina's progress should be monitored on a weekly basis to ensure she is following her treatment plan and making progress towards her goals.",
+            comments: '',
+        } as any;
     };
 }

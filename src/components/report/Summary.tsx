@@ -1,5 +1,5 @@
-import { SalesTimeSeriesChart } from '@components/charts/SalesTimeSeriesChart';
-import { QuantityTimeSeriesChart } from '@components/charts/QuantityTimeSeriesChart';
+import { CarePlanAdheranceAssignments } from '@components/charts/CarePlanAdheranceAssignments';
+import { CarePlanPerformance } from '@components/charts/CarePlanPerformance';
 import { Card } from '@library/Card';
 import { SimpleCard } from '@library/card/SimpleCard';
 import { useUserContext } from '@components/user/user.context';
@@ -33,8 +33,8 @@ export const Summary = () => {
                                 }}
                             />
                         }
-                        title="Total Diagnosis"
-                        value="₹ 13,100"
+                        title="Active Patients on Care Plan"
+                        value="135"
                         theme={AppColor.LinearBlue}
                         numberValue
                     />
@@ -42,8 +42,8 @@ export const Summary = () => {
                 <Col span={7} offset={1}>
                     <MetricCard
                         icon={<FontAwesomeIcon icon={faSortAmountUp} size={'xl'}></FontAwesomeIcon>}
-                        title="Total Surgeries"
-                        value="5003"
+                        title="Total Care Plan Assignments"
+                        value="205"
                         theme={AppColor.LinearGreen}
                         numberValue
                     />
@@ -51,23 +51,15 @@ export const Summary = () => {
                 <Col span={8} offset={1}>
                     <MetricCard
                         icon={<FontAwesomeIcon icon={faCoins} size={'xl'}></FontAwesomeIcon>}
-                        title="Total Patients Treated"
-                        value="₹ 25,042"
+                        title="High Risk Patients"
+                        value="35%"
                         theme={AppColor.LinearRed}
                         numberValue
                     />
                 </Col>
-                {/* <Col span={6} offset={1}>
-                    <MetricCard
-                        icon={<FontAwesomeIcon icon={faTag} size={'xl'}></FontAwesomeIcon>}
-                        title="Highest Seller Brand"
-                        theme={AppColor.LinearYellow}
-                        value="MI TV 32'"
-                    />
-                </Col> */}
             </Row>
             <VerticalSpace size="xlg" />
-            <Row>
+            {/* <Row>
                 <Col span={5}>
                     <SimpleCard
                         icon={<ShoppingCartOutlined />}
@@ -100,8 +92,8 @@ export const Summary = () => {
                     />
                 </Col>
             </Row>
-            <VerticalSpace size="xlg" />
-            <CompareCard
+            <VerticalSpace size="xlg" /> */}
+            {/* <CompareCard
                 title="Claim Filing"
                 percentage={15}
                 compareFromTitle="This Week"
@@ -109,23 +101,14 @@ export const Summary = () => {
                 compareToTitle="Previous Week"
                 compareToValue="1,942"
             />
-            <VerticalSpace size="xlg" />
-            <Card title="Patient Diagnosis" highlightShadow>
-                <SalesTimeSeriesChart />
+            <VerticalSpace size="xlg" /> */}
+            <Card title="Care Plan Adherance compared to Assignments " highlightShadow>
+                <CarePlanAdheranceAssignments />
             </Card>
             <VerticalSpace size="xlg" />
-            <Row>
-                <Col span={12}>
-                    <Card title="CPR Treatments" highlightShadow>
-                        <SalesTimeSeriesChart />
-                    </Card>
-                </Col>
-                <Col span={11} offset={1}>
-                    <Card title="OTs    " highlightShadow>
-                        <QuantityTimeSeriesChart />
-                    </Card>
-                </Col>
-            </Row>
+            <Card title="Care Plan health improvements by age" highlightShadow>
+                <CarePlanPerformance />
+            </Card>
         </AppLayout>
     );
 };

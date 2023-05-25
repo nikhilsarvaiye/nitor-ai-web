@@ -1,9 +1,7 @@
 import { theme } from 'antd';
-import React, { PureComponent } from 'react';
 import {
     BarChart,
     Bar,
-    Cell,
     XAxis,
     YAxis,
     CartesianGrid,
@@ -14,76 +12,28 @@ import {
 
 const data = [
     {
-        name: 'Week 1',
-        uv: 4000,
-        pv: 2400,
-        amt: 2400,
+        name: '30-40',
+        Percentage: 60,
     },
     {
-        name: 'Week 2',
-        uv: 3000,
-        pv: 1398,
-        amt: 2210,
+        name: '40-50',
+        Percentage: 65,
     },
     {
-        name: 'Week 3',
-        uv: 2000,
-        pv: 9800,
-        amt: 2290,
+        name: '50-60',
+        Percentage: 45,
     },
     {
-        name: 'Week 4',
-        uv: 2780,
-        pv: 3908,
-        amt: 2000,
+        name: '60-70',
+        Percentage: 45,
     },
     {
-        name: 'Week 5',
-        uv: 1890,
-        pv: 4800,
-        amt: 2181,
+        name: '70-80',
+        Percentage: 35,
     },
     {
-        name: 'Week 6',
-        uv: 2390,
-        pv: 3800,
-        amt: 2500,
-    },
-    {
-        name: 'Week 7',
-        uv: 3600,
-        pv: 4500,
-        amt: 2200,
-    },
-    {
-        name: 'Week 8',
-        uv: 2300,
-        pv: 3300,
-        amt: 1100,
-    },
-    {
-        name: 'Week 9',
-        uv: 3490,
-        pv: 4300,
-        amt: 2100,
-    },
-    {
-        name: 'Week 10',
-        uv: 2300,
-        pv: 3300,
-        amt: 1100,
-    },
-    {
-        name: 'Week 11',
-        uv: 4490,
-        pv: 6300,
-        amt: 3500,
-    },
-    {
-        name: 'Week 12',
-        uv: 5490,
-        pv: 7300,
-        amt: 3200,
+        name: '80-90',
+        Percentage: 20,
     },
 ];
 
@@ -91,7 +41,7 @@ const data = [
 // only contain a render method without any state (the App component in this
 // example).
 
-export const QuantityTimeSeriesChart = () => {
+export const CarePlanPerformance = () => {
     const { token } = theme.useToken(); // #267dff
     return (
         <div style={{ width: '100%', height: 300 }}>
@@ -117,9 +67,9 @@ export const QuantityTimeSeriesChart = () => {
                     <XAxis dataKey="name" />
                     <YAxis />
                     <Tooltip />
-                    <Legend />
-                    <Bar dataKey="pv" fill={token.colorPrimary} />
-                    <Bar dataKey="uv" fill="#f2f2f2" />
+                    {/* <Legend /> */}
+                    <Bar dataKey="Percentage" fill={token.colorPrimary} />
+                    {/* <Bar dataKey="uv" fill="#f2f2f2" /> */}
                 </BarChart>
             </ResponsiveContainer>
         </div>

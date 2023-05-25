@@ -22,6 +22,7 @@ export interface BaseFormProps {
     openAsModal?: boolean;
     modalTitle?: string;
     modalOpen?: boolean;
+    saveButtonLabel?: string;
 }
 
 export const BaseForm: FC<BaseFormProps> = observer((props) => {
@@ -136,7 +137,7 @@ export const BaseForm: FC<BaseFormProps> = observer((props) => {
                             loading={props.store.loading}
                             icon={<SaveOutlined />}
                         >
-                            Save
+                            {props.saveButtonLabel || 'Save'}
                         </Button>
                         <Button onClick={onCancel} icon={<CloseOutlined />}>
                             Cancel

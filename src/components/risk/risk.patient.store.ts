@@ -2,19 +2,19 @@ import { makeObservable, observable } from 'mobx';
 import { QueryOptions } from 'odata-query';
 import { SortOrder } from '@library/table/table.models';
 import { BaseStore } from '@components/base/stores';
-import { PatientModel } from './patient.models';
-import { PatientService } from './patient.service';
+import { PatientModel } from '@components/patient/patient.models';
+import { RiskPatientService } from './risk.patient.service';
 import { UploadStore } from '@library/upload';
 
-export class PatientStore extends BaseStore<PatientModel> {
+export class RiskPatientStore extends BaseStore<PatientModel> {
     defaultValues: any = {
         id: '',
         uploadFiles: [],
         uploadStore: new UploadStore(),
     };
     titles = {
-        name: 'Patient',
-        listName: 'Patients',
+        name: 'Risk',
+        listName: 'Risks',
     };
     searchCriteria = {
         page: 1,
@@ -23,7 +23,7 @@ export class PatientStore extends BaseStore<PatientModel> {
         sortOrder: SortOrder.Descend,
         name: '',
     } as any;
-    constructor(patientService: PatientService) {
+    constructor(patientService: RiskPatientService) {
         super(patientService);
         makeObservable(this, {
             searchCriteria: observable,

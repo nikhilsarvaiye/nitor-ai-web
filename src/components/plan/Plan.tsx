@@ -8,6 +8,16 @@ import { planStore } from '@components/plan/InitPlan';
 import { Center } from '@library/center';
 import { yupSync } from '@library/util/validations';
 import { BaseForm } from '@components/base/components/BaseForm';
+import { AreaChartOutlined } from '@ant-design/icons';
+import { faSortAmountUp, faCoins } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { VerticalSpace } from '@library/VerticalSpace';
+import { MetricCard } from '@library/card/MetricCard';
+import { AppColor } from './../../AppTheme';
+import { PatientCard } from '@library/card/PatientCard';
+import { PatientRiskData } from '@components/risk/risk.patient.service';
+import { PatientInsuranceCard } from '@library/card/PatientInsuranceCard';
+import { PatientDiagnosisCard } from '@library/card/PatientDiagnosisCard';
 
 const schema = yup.object().shape({
     name: yup.string().nullable().required('Please provide title'),
@@ -19,53 +29,91 @@ const _Plan = () => {
 
     const onFormValueChange = (changesValues: any, values: any) => {};
 
+    const patient = PatientRiskData[0];
+
     return (
         <BaseForm
             form={form}
             store={planStore as any}
             validationSchema={schema}
             onFormValueChange={onFormValueChange}
+            saveButtonLabel="Assign"
         >
-            <Row>
-                {/* Left */}
-                <Col span={16}>
-                    <PlanGeneral />
+            {!planStore.loading && (
+                <Col>
+                    <Row>
+                        <Col span={7}>
+                            <PatientCard theme={AppColor.LinearBlue} patient={patient} />
+                        </Col>
+                        <Col span={7} offset={1}>
+                            <PatientInsuranceCard theme={AppColor.LinearGreen} patient={patient} />
+                        </Col>
+                        <Col span={8} offset={1}>
+                            <PatientDiagnosisCard theme={AppColor.LinearRed} patient={patient} />
+                        </Col>
+                    </Row>
                 </Col>
-
-                {/* Right */}
-                <Col span={7} offset={1}>
-                    <PlanMedia />
+            )}
+            <VerticalSpace size="xlg" />
+            <Row>
+                <Col span={12}>
+                    <Card title="Nursing Diagnosis">
+                        <Form.Item name="diagnosis" rules={[yupSync(schema)]}>
+                            <Input.TextArea rows={5} />
+                        </Form.Item>
+                    </Card>
+                </Col>
+                <Col span={11} offset={1}>
+                    <Card title="Outcomes and Evaluation">
+                        <Form.Item name="evaluation" rules={[yupSync(schema)]}>
+                            <Input.TextArea rows={5} />
+                        </Form.Item>
+                    </Card>
                 </Col>
             </Row>
+            <VerticalSpace size="xlg" />
+            <Col>
+                <Card title="Interventions">
+                    <Form.Item name="intervention" rules={[yupSync(schema)]}>
+                        <Input.TextArea rows={5} />
+                    </Form.Item>
+                </Card>
+            </Col>
+            <VerticalSpace size="xlg" />
+            <Row>
+                <Col span={12}>
+                    <Card title="Long Term Goal">
+                        <Form.Item
+                            label="Description"
+                            name="longTermGoal"
+                            rules={[yupSync(schema)]}
+                        >
+                            <Input.TextArea rows={5} />
+                        </Form.Item>
+                    </Card>
+                </Col>
+                <Col span={11} offset={1}>
+                    <Card title="Short Term Goal">
+                        <Form.Item
+                            label="Description"
+                            name="shortTermGoal"
+                            rules={[yupSync(schema)]}
+                        >
+                            <Input.TextArea rows={5} />
+                        </Form.Item>
+                    </Card>
+                </Col>
+            </Row>
+            <VerticalSpace size="xlg" />
+            <Col>
+                <Card>
+                    <Form.Item label="Comments" name="comments" rules={[yupSync(schema)]}>
+                        <Input.TextArea rows={5} />
+                    </Form.Item>
+                </Card>
+            </Col>
         </BaseForm>
     );
 };
-
-const PlanGeneral = () => {
-    return (
-        <Card title="General">
-            <Form.Item label="Title" name="name" rules={[yupSync(schema)]}>
-                <Input />
-            </Form.Item>
-            <Form.Item label="Description" name="description" rules={[yupSync(schema)]}>
-                <Input.TextArea />
-            </Form.Item>
-        </Card>
-    );
-};
-
-const PlanMedia = observer(() => {
-    return (
-        <Card title="Media">
-            {planStore.selectedItem.uploadStore ? (
-                <Upload store={planStore.selectedItem.uploadStore} multiple />
-            ) : (
-                <Center>
-                    <Spin spinning={true} size={'small'} />
-                </Center>
-            )}
-        </Card>
-    );
-});
 
 export const Plan = observer(_Plan);

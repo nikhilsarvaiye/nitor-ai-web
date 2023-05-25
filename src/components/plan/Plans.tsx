@@ -9,8 +9,8 @@ export const Plans = () => {
 
     const columns = [
         {
-            title: 'Plan ID',
-            dataIndex: 'id',
+            title: 'Name',
+            dataIndex: 'patientName',
             width: 10,
             render: (value: any, record: any, index: number) => {
                 return (
@@ -27,195 +27,11 @@ export const Plans = () => {
                 );
             },
         },
-        // {
-        //     title: 'Birth Date',
-        //     dataIndex: 'birthday',
-        //     width: 10,
-        // },
-
-        // {
-        //     title: 'Prefix',
-        //     dataIndex: 'prefix',
-        //     width: 10,
-        // },
-
         {
-            title: 'First Name',
-            dataIndex: 'firstName',
+            title: 'Created On',
+            dataIndex: 'createdDate',
             width: 10,
         },
-
-        {
-            title: 'Last Name',
-            dataIndex: 'lastName',
-            width: 10,
-        },
-        // {
-        //     title: 'Suffix',
-        //     dataIndex: 'suffix',
-        //     width: 10,
-        // },
-        // {
-        //     title: 'Maiden',
-        //     dataIndex: 'maiden',
-        //     width: 10,
-        // },
-        // {
-        //     title: 'Marital',
-        //     dataIndex: 'marital',
-        //     width: 10,
-        // },
-        // {
-        //     title: 'Race',
-        //     dataIndex: 'race',
-        //     width: 10,
-        // },
-        // {
-        //     title: 'Ethnicity',
-        //     dataIndex: 'ethnicity',
-        //     width: 10,
-        // },
-        {
-            title: 'Gender',
-            dataIndex: 'gender',
-            width: 10,
-        },
-
-        // {
-        //     title: 'Address',
-        //     dataIndex: 'address',
-        //     width: 10,
-        // },
-
-        {
-            title: 'City',
-            dataIndex: 'city',
-            width: 10,
-        },
-
-        // {
-        //     title: 'State',
-        //     dataIndex: 'state',
-        //     width: 10,
-        // },
-
-        // {
-        //     title: 'County',
-        //     dataIndex: 'county',
-        //     width: 10,
-        // },
-        // {
-        //     title: 'FIPS',
-        //     dataIndex: 'fips',
-        //     width: 10,
-        // },
-        {
-            title: 'ZIP',
-            dataIndex: 'zip',
-            width: 10,
-        },
-
-        // {
-        //     title: 'Healthcare expenses',
-        //     dataIndex: 'healthExpenses',
-        //     width: 10,
-        // },
-        // {
-        //     title: 'Healthcare coverage',
-        //     dataIndex: 'healthcareCoverage',
-        //     width: 10,
-        // },
-        // {
-        //     title: 'Income',
-        //     dataIndex: 'income',
-        //     width: 10,
-        // },
-        // {
-        //     title: 'Allergies Code',
-        //     dataIndex: 'allergiesCode',
-        //     width: 10,
-        // },
-        // {
-        //     title: 'Allergies Desc',
-        //     dataIndex: 'allergiesDesc',
-        //     width: 10,
-        // },
-        // {
-        //     title: 'Allergies Reaction',
-        //     dataIndex: 'allergiesReaction',
-        //     width: 10,
-        // },
-        // {
-        //     title: 'Inactive Conditions Code',
-        //     dataIndex: 'iCondCode',
-        //     width: 10,
-        // },
-        // {
-        //     title: 'Active Conditions Code',
-        //     dataIndex: 'aCondCode',
-        //     width: 10,
-        // },
-        // {
-        //     title: 'Inactive Conditions Desc',
-        //     dataIndex: 'iCondDesc',
-        //     width: 10,
-        // },
-        // {
-        //     title: 'Active Conditions Desc',
-        //     dataIndex: 'aCondDesc',
-        //     width: 10,
-        // },
-        // {
-        //     title: 'Inactive Medications Code',
-        //     dataIndex: 'iMedCode',
-        //     width: 10,
-        // },
-        // {
-        //     title: 'Active Medications Code',
-        //     dataIndex: 'aMedCode',
-        //     width: 10,
-        // },
-        // {
-        //     title: 'Inactive Medications Desc',
-        //     dataIndex: 'iMedDesc',
-        //     width: 10,
-        // },
-        // {
-        //     title: 'Active Medications Desc',
-        //     dataIndex: 'aMedDesc',
-        //     width: 10,
-        // },
-        // {
-        //     title: 'Inactive Medications Reason Desc',
-        //     dataIndex: 'iMedReasonDesc',
-        //     width: 10,
-        // },
-        // {
-        //     title: 'Active Medications Reason Desc',
-        //     dataIndex: 'aMedReasonDesc',
-        //     width: 10,
-        // },
-
-        // {
-        //     title: 'Total Cost',
-        //     dataIndex: 'totalCost',
-        //     width: 10,
-        // },
-        // {
-        //     title: 'Procedure Code',
-        //     dataIndex: 'procedureCode',
-        //     width: 10,
-        // },
-        // {
-        //     title: 'Procedure Desc',
-        //     dataIndex: 'procedureDesc',
-        //     width: '2%',
-        // },
-        // {
-        //     title: 'Procedure Reason Desc',
-        //     dataIndex: 'procedureReasonDesc',
-        //     width: 10,
-        // },
     ] as (ColumnGroupType<any> | ColumnType<any>)[];
 
     return (
