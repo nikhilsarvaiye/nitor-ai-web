@@ -245,7 +245,7 @@ export class RiskPatientService extends BaseService<PatientModel> implements ISe
             items: data as any,
         };
 
-        return new Promise((res) => setTimeout(() => res(pageData), 2000))
+        return new Promise((res) => setTimeout(() => res(pageData), 4000))
     };
 }
 

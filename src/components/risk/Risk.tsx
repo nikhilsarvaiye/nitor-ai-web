@@ -74,7 +74,7 @@ const _RiskPatients = () => {
                             type="primary"
                             icon={<ProjectOutlined />}
                             onClick={() => {
-                                message.info("we are generating patient care plan for patient, kindly wait...");
+                                message.info("we are generating patient care plan, kindly wait...");
                                 navigator('/plans/' + PatientRiskData[0].id);
                             }}
                         >

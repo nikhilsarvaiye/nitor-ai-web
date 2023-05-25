@@ -41,11 +41,11 @@ export class PlanService extends BaseService<PlanModel> implements IService<Plan
     };
 
     get = async (id: string, config?: AxiosRequestConfig): Promise<PlanModel | null> => {
-        const response = await Api.get<PlanModel>(
-            `https://nitor-ai-api.azurewebsites.net/generate_treatment_plan?id=${id}`,
-            config,
-        );
-        return {
+        // const response = await Api.get<PlanModel>(
+        //     `https://nitor-ai-api.azurewebsites.net/generate_treatment_plan?id=${id}`,
+        //     config,
+        // );
+        const response = {
             diagnosis:
                 'Edwina Witting has been diagnosed with miscarriage in the first trimester, disorder of kidney due to diabetes mellitus, severe anxiety, chronic kidney disease stages 1-4, metabolic syndrome X, proteinuria due to type 2 diabetes mellitus, history of appendectomy, end-stage renal disease, obesity, appendicitis, anemia, social isolation, prediabetes, essential hypertension, microalbuminuria due to type 2 diabetes mellitus, and limited social contact, and is awaiting kidney transplantation.',
             evaluation:
@@ -58,5 +58,6 @@ export class PlanService extends BaseService<PlanModel> implements IService<Plan
                 "Edwina's progress should be monitored on a weekly basis to ensure she is following her treatment plan and making progress towards her goals.",
             comments: '',
         } as any;
+        return new Promise((res) => setTimeout(() => res(response), 8000));
     };
 }
