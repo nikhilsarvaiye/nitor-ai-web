@@ -4,6 +4,9 @@ import { Patients } from '@components/patient/Patients';
 import { AppErrorPage } from './AppErrorPage';
 import { UserRoutes } from '@components/user/UserRoutes';
 import { ReportRoutes } from '@components/report/ReportRoutes';
+import { ClinicalRoutes } from '@components/clinical/ClinicalRoutes';
+import { ClaimRoutes } from '@components/claim/ClaimRoutes';
+import { PlanRoutes } from '@components/plan/PlanRoutes';
 
 const router = createBrowserRouter([
     {
@@ -15,6 +18,9 @@ const router = createBrowserRouter([
                 element: <Patients />,
             },
             PatientRoutes,
+            ClinicalRoutes,
+            ClaimRoutes,
+            PlanRoutes,
             UserRoutes,
             ReportRoutes,
         ],

@@ -69,12 +69,12 @@ const _SideNav: FC<{ collapsed: boolean }> = (props) => {
                                 Patients
                             </Menu.Item>
                         </NavLink>
-                        <NavLink to="/clinical">
+                        <NavLink to="/clinicals">
                             <Menu.Item
-                                key={'clinical'}
+                                key={'clinicals'}
                                 icon={<TagOutlined style={{ fontSize: collapsed ? 18 : 14 }} />}
                             >
-                                Clinical
+                                Clinicals
                             </Menu.Item>
                         </NavLink>
                         <NavLink to="/claims">
@@ -83,6 +83,14 @@ const _SideNav: FC<{ collapsed: boolean }> = (props) => {
                                 icon={<TagOutlined style={{ fontSize: collapsed ? 18 : 14 }} />}
                             >
                                 Claims
+                            </Menu.Item>
+                        </NavLink>
+                        <NavLink to="/plans">
+                            <Menu.Item
+                                key={'plans'}
+                                icon={<TagOutlined style={{ fontSize: collapsed ? 18 : 14 }} />}
+                            >
+                                Care Plan
                             </Menu.Item>
                         </NavLink>
                         <NavLink to="/users">

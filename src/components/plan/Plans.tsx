@@ -1,32 +1,32 @@
-import { Button, Col, Form, Input, Row, Tag } from 'antd';
+import { Button, Col, Form, Input, Row } from 'antd';
 import { useNavigate } from 'react-router-dom';
 import { BaseList } from '@components/base/components/BaseList';
 import { ColumnGroupType, ColumnType } from 'antd/es/table';
-import { patientStore } from './InitPatients';
+import { planStore } from './InitPlan';
 
-export const Patients = () => {
+export const Plans = () => {
     const navigator = useNavigate();
 
     const columns = [
-        // {
-        //     title: 'Patient ID',
-        //     dataIndex: 'id',
-        //     width: 10,
-        //     render: (value: any, record: any, index: number) => {
-        //         return (
-        //             <Button
-        //                 type="link"
-        //                 onClick={() => {
-        //                     navigator(
-        //                         `/${patientStore.titles.listName.toLocaleLowerCase()}/${record.id}`,
-        //                     );
-        //                 }}
-        //             >
-        //                 {value}
-        //             </Button>
-        //         );
-        //     },
-        // },
+        {
+            title: 'Plan ID',
+            dataIndex: 'id',
+            width: 10,
+            render: (value: any, record: any, index: number) => {
+                return (
+                    <Button
+                        type="link"
+                        onClick={() => {
+                            navigator(
+                                `/${planStore.titles.listName.toLocaleLowerCase()}/${record.id}`,
+                            );
+                        }}
+                    >
+                        {value}
+                    </Button>
+                );
+            },
+        },
         // {
         //     title: 'Birth Date',
         //     dataIndex: 'birthday',
@@ -38,36 +38,18 @@ export const Patients = () => {
         //     dataIndex: 'prefix',
         //     width: 10,
         // },
-        {
-            title: 'Name',
-            dataIndex: 'name',
-            width: 20,
-            render: (value: any, record: any, index: number) => {
-                return (
-                    <Button
-                        type="link"
-                        onClick={() => {
-                            navigator(
-                                `/${patientStore.titles.listName.toLocaleLowerCase()}/${record.id}`,
-                            );
-                        }}
-                    >
-                        {record.firstName} {record.lastName}
-                    </Button>
-                );
-            },
-        },
-        // {
-        //     title: 'First Name',
-        //     dataIndex: 'firstName',
-        //     width: 10,
-        // },
 
-        // {
-        //     title: 'Last Name',
-        //     dataIndex: 'lastName',
-        //     width: 10,
-        // },
+        {
+            title: 'First Name',
+            dataIndex: 'firstName',
+            width: 10,
+        },
+
+        {
+            title: 'Last Name',
+            dataIndex: 'lastName',
+            width: 10,
+        },
         // {
         //     title: 'Suffix',
         //     dataIndex: 'suffix',
@@ -111,17 +93,17 @@ export const Patients = () => {
             width: 10,
         },
 
-        {
-            title: 'State',
-            dataIndex: 'state',
-            width: 10,
-        },
+        // {
+        //     title: 'State',
+        //     dataIndex: 'state',
+        //     width: 10,
+        // },
 
-        {
-            title: 'County',
-            dataIndex: 'county',
-            width: 10,
-        },
+        // {
+        //     title: 'County',
+        //     dataIndex: 'county',
+        //     width: 10,
+        // },
         // {
         //     title: 'FIPS',
         //     dataIndex: 'fips',
@@ -248,7 +230,7 @@ export const Patients = () => {
                 </Row>
             }
             columns={columns}
-            store={patientStore as any}
+            store={planStore as any}
         />
     );
 };
