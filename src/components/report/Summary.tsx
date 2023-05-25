@@ -1,8 +1,5 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCoins, faSortAmountUp, faTag } from '@fortawesome/free-solid-svg-icons';
 import { SalesTimeSeriesChart } from '@components/charts/SalesTimeSeriesChart';
 import { QuantityTimeSeriesChart } from '@components/charts/QuantityTimeSeriesChart';
-import { MetricCard } from '@library/card/MetricCard';
 import { Card } from '@library/Card';
 import { SimpleCard } from '@library/card/SimpleCard';
 import { useUserContext } from '@components/user/user.context';
@@ -17,6 +14,9 @@ import {
     UpCircleOutlined,
     UserOutlined,
 } from '@ant-design/icons';
+import { faSortAmountUp, faCoins } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { MetricCard } from '@library/card/MetricCard';
 import { AppColor } from '../../AppTheme';
 
 export const Summary = () => {
@@ -33,8 +33,8 @@ export const Summary = () => {
                                 }}
                             />
                         }
-                        title="Total Sales"
-                        value="₹ 4,64,100"
+                        title="Total Diagnosis"
+                        value="₹ 13,100"
                         theme={AppColor.LinearBlue}
                         numberValue
                     />
@@ -42,7 +42,7 @@ export const Summary = () => {
                 <Col span={7} offset={1}>
                     <MetricCard
                         icon={<FontAwesomeIcon icon={faSortAmountUp} size={'xl'}></FontAwesomeIcon>}
-                        title="Total Quantity"
+                        title="Total Surgeries"
                         value="5003"
                         theme={AppColor.LinearGreen}
                         numberValue
@@ -51,8 +51,8 @@ export const Summary = () => {
                 <Col span={8} offset={1}>
                     <MetricCard
                         icon={<FontAwesomeIcon icon={faCoins} size={'xl'}></FontAwesomeIcon>}
-                        title="Total Margin"
-                        value="₹ 1,50,042"
+                        title="Total Patients Treated"
+                        value="₹ 25,042"
                         theme={AppColor.LinearRed}
                         numberValue
                     />
@@ -72,7 +72,7 @@ export const Summary = () => {
                     <SimpleCard
                         icon={<ShoppingCartOutlined />}
                         value="486"
-                        description="Order Received"
+                        description="Requests"
                         change={10}
                     />
                 </Col>
@@ -81,7 +81,7 @@ export const Summary = () => {
                         icon={<AppleOutlined />}
                         value="85%"
                         change={33}
-                        description="App Downloads"
+                        description="Downloads"
                     />
                 </Col>
                 <Col span={5} offset={1}>
@@ -96,32 +96,32 @@ export const Summary = () => {
                     <SimpleCard
                         icon={<UpCircleOutlined />}
                         value="486"
-                        description="Order Conversion Rate"
+                        description="Conversion Rate"
                     />
                 </Col>
             </Row>
             <VerticalSpace size="xlg" />
             <CompareCard
-                title="Week Sales"
-                percentage={35}
+                title="Claim Filing"
+                percentage={15}
                 compareFromTitle="This Week"
-                compareFromValue="₹ 1,50,042"
+                compareFromValue="1,502"
                 compareToTitle="Previous Week"
-                compareToValue="₹ 2,50,042"
+                compareToValue="1,942"
             />
             <VerticalSpace size="xlg" />
-            <Card title="Weekly Sales" highlightShadow>
+            <Card title="Patient Diagnosis" highlightShadow>
                 <SalesTimeSeriesChart />
             </Card>
             <VerticalSpace size="xlg" />
             <Row>
                 <Col span={12}>
-                    <Card title="Weekly Sales" highlightShadow>
+                    <Card title="CPR Treatments" highlightShadow>
                         <SalesTimeSeriesChart />
                     </Card>
                 </Col>
                 <Col span={11} offset={1}>
-                    <Card title="Weekly Quantity Sold" highlightShadow>
+                    <Card title="OTs    " highlightShadow>
                         <QuantityTimeSeriesChart />
                     </Card>
                 </Col>

@@ -56,7 +56,7 @@ export const MetricCard: FC<MetricCardProps> = (props) => {
                     </Col>
                 </Row>
                 <VerticalSpace size="lg" />
-                <Row justify={'space-between'}>
+                {/* <Row justify={'space-between'}>
                     <Col>
                         <Col>Lift</Col>
                         <Col>{props.value}</Col>
@@ -65,7 +65,7 @@ export const MetricCard: FC<MetricCardProps> = (props) => {
                         <Col>(%) Lift</Col>
                         <Col>60%</Col>
                     </Col>
-                </Row>
+                </Row> */}
             </Card>
         </Spin>
     );

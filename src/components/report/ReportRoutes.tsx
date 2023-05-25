@@ -1,5 +1,4 @@
 import { RouteObject } from 'react-router-dom';
-import { AppInsights } from './AppInsights';
 import { Summary } from './Summary';
 
 export const ReportRoutes = {
@@ -8,10 +7,6 @@ export const ReportRoutes = {
         {
             path: '',
             element: <Summary />,
-        },
-        {
-            path: 'insights',
-            element: <AppInsights />,
         },
     ],
 } as RouteObject;

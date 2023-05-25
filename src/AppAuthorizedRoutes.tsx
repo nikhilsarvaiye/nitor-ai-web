@@ -4,8 +4,6 @@ import { Patients } from '@components/patient/Patients';
 import { AppErrorPage } from './AppErrorPage';
 import { UserRoutes } from '@components/user/UserRoutes';
 import { ReportRoutes } from '@components/report/ReportRoutes';
-import { AppInsights } from '@components/report/AppInsights';
-import { Performance } from '@components/report/Performance';
 
 const router = createBrowserRouter([
     {
@@ -19,14 +17,6 @@ const router = createBrowserRouter([
             PatientRoutes,
             UserRoutes,
             ReportRoutes,
-            {
-                path: 'insights',
-                element: <AppInsights />,
-            },
-            {
-                path: 'performance',
-                element: <Performance />,
-            },
         ],
     },
 ]);
