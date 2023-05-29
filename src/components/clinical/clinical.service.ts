@@ -8,6 +8,7 @@ const data = [
     {
         patientId: '27c02083-54f6-c520-c68a-9ef2387e128b',
         dob: '22-07-1949',
+        age: '74',
         firstName: 'Edwina',
         lastName: 'Witting',
         marital: 'D',
@@ -51,6 +52,7 @@ const data = [
     {
         patientId: 'baea9f26-8eab-58e0-8e2f-a91b5dbcb481',
         dob: '27-02-1960',
+        age: '73',
         firstName: 'Marty',
         lastName: 'Heathcote',
         marital: 'M',
@@ -96,6 +98,7 @@ const data = [
     {
         patientId: '18461a0f-bef2-1a83-b336-6ba9fc8e5bed',
         dob: '30-05-1938',
+        age: '85',
         firstName: 'Bill',
         lastName: 'McDermott',
         marital: 'M',
@@ -138,6 +141,7 @@ const data = [
     {
         patientId: 'f4fb6b8e-c053-51e7-84cc-a90734291153',
         dob: '19-04-1945',
+        age: '78',
         firstName: 'Claris',
         lastName: 'Parisian',
         marital: 'M',
@@ -180,6 +184,7 @@ const data = [
     {
         patientId: '3056737b-11a7-5aed-3acb-5638ce7ab407',
         dob: '19-10-2000',
+        age: '23',
         firstName: 'Mark',
         lastName: 'Hill',
         marital: 'M',
@@ -217,6 +222,7 @@ const data = [
     {
         patientId: '40b8f37e-385d-857f-2db0-07c142a8e4a2',
         dob: '10/7/1990',
+        age: '33',
         firstName: 'Jesse',
         lastName: 'Nikolaus',
         marital: 'M',

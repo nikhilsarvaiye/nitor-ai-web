@@ -1,6 +1,6 @@
 import { FC, ReactNode, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { Button, Col, Form, FormInstance, Modal, Space, Spin } from 'antd';
+import { Button, Col, Form, FormInstance, Modal, Space, Spin, message } from 'antd';
 import { observer } from 'mobx-react';
 import { ContentFormLayout } from '@components/layout/ContentLayouts';
 import { IModel } from '../models';
@@ -23,6 +23,8 @@ export interface BaseFormProps {
     modalTitle?: string;
     modalOpen?: boolean;
     saveButtonLabel?: string;
+    loadingMessage?: string;
+    loadingMessageDuration?: number | undefined;
 }
 
 export const BaseForm: FC<BaseFormProps> = observer((props) => {
@@ -65,6 +67,10 @@ export const BaseForm: FC<BaseFormProps> = observer((props) => {
     useEffect(() => {
         props.store.clearSelectedItem();
         if (id) {
+            if (props.loadingMessage) {
+                message.destroy();
+                message.info(props.loadingMessage, props.loadingMessageDuration);
+            }
             props.store.get(id);
         }
     }, [id, props.store]);

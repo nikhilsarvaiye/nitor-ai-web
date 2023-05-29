@@ -5,6 +5,7 @@ import { IPageResponse } from '@components/base/models';
 import { QueryOptions } from 'odata-query';
 import { AxiosRequestConfig } from 'axios';
 import { Api } from '@components/base/api/base.api';
+import { PatientRiskData } from '@components/risk/risk.patient.service';
 
 const data = [
     {
@@ -41,23 +42,46 @@ export class PlanService extends BaseService<PlanModel> implements IService<Plan
     };
 
     get = async (id: string, config?: AxiosRequestConfig): Promise<PlanModel | null> => {
-        // const response = await Api.get<PlanModel>(
-        //     `https://nitor-ai-api.azurewebsites.net/generate_treatment_plan?id=${id}`,
-        //     config,
-        // );
-        const response = {
-            diagnosis:
-                'Edwina Witting has been diagnosed with miscarriage in the first trimester, disorder of kidney due to diabetes mellitus, severe anxiety, chronic kidney disease stages 1-4, metabolic syndrome X, proteinuria due to type 2 diabetes mellitus, history of appendectomy, end-stage renal disease, obesity, appendicitis, anemia, social isolation, prediabetes, essential hypertension, microalbuminuria due to type 2 diabetes mellitus, and limited social contact, and is awaiting kidney transplantation.',
-            evaluation:
-                "The goal of Edwina's treatment plan is to improve her physical health, minimize the risk of further health complications, and reduce her anxiety levels",
-            intervention:
-                'Edwina should receive regular medical check-ups, take her prescribed medications, and attend counseling sessions to help her manage her anxiety. She should also follow a healthy diet and exercise routine to improve her physical health and maintain a healthy weight.',
+        const patient = PatientRiskData.find((x) => x.id === id);
+        if (!patient) {
+            return null;
+        }
+        // const url = 'http://127.0.0.1:5000/generate_treatment_plan';
+        const url = 'https://nitor-ai-api.azurewebsites.net/generate_treatment_plan';
+        const response = await Api.post<PlanModel[]>(url, {
+            PATIENTID: id,
+            FIRST: patient.firstName,
+            LAST: patient.lastName,
+            GENDER: patient.gender,
+            Age: patient.age,
+            sum_risk: '9.42098',
+            Risk_Bracket: patient.risk,
+            ACTIVE_CONDITIONS_DESC: patient.aCondDesc,
+            ACTIVE_MEDICATIONS_DESCRIPTION: patient.aMedDesc,
+            ALLERGIES_DESC: patient.allergiesDesc,
+            PROCEDURE_DESCRIPTION: patient.procedureDesc,
+        });
+        const data = response.data?.length ? (response.data[0] as any) : null;
+        if (!data) {
+            return null;
+        }
+        return {
+            diagnosis: data['Diagnosis'],
+            evaluation: data['Goals & Outcomes'],
+            intervention: data['Intervention'],
             longTermGoal:
-                'Edwina should be evaluated regularly over a period of months to ensure that her treatment plan is effective and her health is improving.',
+                data['Long-term Evaluation'] ||
+                data['Long Term Evaluation'] ||
+                data['Long term Evaluation'],
             shortTermGoal:
-                "Edwina's progress should be monitored on a weekly basis to ensure she is following her treatment plan and making progress towards her goals.",
+                data['Short-term Evaluation'] ||
+                data['Short Term Evaluation'] ||
+                data['Short term Evaluation'],
             comments: '',
         } as any;
-        return new Promise((res) => setTimeout(() => res(response), 8000));
+    };
+
+    update = async (id: string, t: PlanModel): Promise<void> => {
+        await new Promise((res) => setTimeout(() => res({}), 1000));
     };
 }

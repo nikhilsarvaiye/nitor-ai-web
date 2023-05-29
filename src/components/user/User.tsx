@@ -179,11 +179,11 @@ export const UserInformation = ({ schema }: { schema: any }) => {
                                             value: -1,
                                         },
                                         {
-                                            label: 'Male',
+                                            label: 'M',
                                             value: 1,
                                         },
                                         {
-                                            label: 'Female',
+                                            label: 'F',
                                             value: 2,
                                         },
                                     ]}

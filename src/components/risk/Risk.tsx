@@ -5,11 +5,14 @@ import { ColumnGroupType, ColumnType } from 'antd/es/table';
 import { ProjectOutlined } from '@ant-design/icons';
 import { observer } from 'mobx-react';
 import { RiskPieChart } from '@components/charts/RiskPieChart';
-import { riskPatientService, riskPatientStore } from './InitRisk';
+import { riskPatientStore } from './InitRisk';
 import { PatientRiskData } from './risk.patient.service';
+import { useEffect, useState } from 'react';
+import { IModel } from '@components/base/models';
 
 const _RiskPatients = () => {
     const navigator = useNavigate();
+    const [selectedRows, setSelectedRows] = useState<IModel[]>([]);
 
     const columns = [
         {
@@ -50,6 +53,11 @@ const _RiskPatients = () => {
         },
     ] as (ColumnGroupType<any> | ColumnType<any>)[];
 
+    useEffect(() => {
+        message.destroy();
+        message.info('we are calculating Risk Using ACG, kindly wait...');
+    }, []);
+
     return (
         <Col>
             <BaseList
@@ -68,14 +76,17 @@ const _RiskPatients = () => {
                 hideSearch
                 columns={columns}
                 store={riskPatientStore as any}
+                rowSelectionType="radio"
+                onSelectedRows={(selectedRowsKeys, selectedRows) => {
+                    setSelectedRows(selectedRows);
+                }}
                 headerRightContent={
-                    riskPatientStore.selectedItems.length === 1 && !riskPatientStore.loading ? (
+                    selectedRows.length === 1 && !riskPatientStore.loading ? (
                         <Button
                             type="primary"
                             icon={<ProjectOutlined />}
                             onClick={() => {
-                                message.info("we are generating patient care plan, kindly wait...");
-                                navigator('/plans/' + PatientRiskData[0].id);
+                                navigator('/plans/' + selectedRows[0].id);
                             }}
                         >
                             Generate Care Plan

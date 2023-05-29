@@ -1,6 +1,10 @@
 import { BaseModel } from '@components/base/models/base.model';
 
 export class PlanModel extends BaseModel {
-    name: string = '';
-    description: string = '';
+    diagnosis: string = '';
+    evaluation: string = '';
+    intervention: string = '';
+    longTermGoal: string = '';
+    shortTermGoal: string = '';
+    comments: string = '';
 }

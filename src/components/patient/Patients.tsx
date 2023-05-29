@@ -1,4 +1,4 @@
-import { Button, Col, Form, Input, Row, Tag, message } from 'antd';
+import { Button, Col, Form, Input, Row } from 'antd';
 import { useNavigate } from 'react-router-dom';
 import { BaseList } from '@components/base/components/BaseList';
 import { ColumnGroupType, ColumnType } from 'antd/es/table';
@@ -254,7 +254,6 @@ const _Patients = () => {
             headerRightContent={
                 patientStore.selectedItems.length > 0 ? (
                     <Button type="primary" icon={<CalculatorOutlined />} onClick={() => {
-                        message.info('we are calculating Risk Using ACG, kindly wait...')
                         navigator('/risk')
                     }}>
                         Calculate Risk Using ACG
