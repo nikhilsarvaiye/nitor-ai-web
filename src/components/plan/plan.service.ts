@@ -67,7 +67,7 @@ export class PlanService extends BaseService<PlanModel> implements IService<Plan
         }
         return {
             diagnosis: data['Diagnosis'],
-            evaluation: data['Goals & Outcomes'],
+            evaluation: data['Goals & Outcomes'] || data['Goals and Outcomes'],
             intervention: data['Intervention'],
             longTermGoal:
                 data['Long-term Evaluation'] ||

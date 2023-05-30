@@ -2,12 +2,12 @@ import { ResponsiveContainer, Cell, Pie, PieChart, Legend } from 'recharts';
 
 const data = [
     { name: 'High', value: 60 },
-    // { name: 'Medium', value: 30 },
-    { name: 'Low', value: 40 },
+    { name: 'Medium', value: 20 },
+    { name: 'Low', value: 20 },
     // { name: 'Group D', value: 200 },
 ];
 
-const COLORS = ['rgb(234, 67, 54)', '#0088FE'];
+const COLORS = ['rgb(234, 67, 54)', '#0088FE', '#f5bd42', 'rgb(51 126 119)'];
 
 export const RiskPieChart = () => {
     const RADIAN = Math.PI / 180;

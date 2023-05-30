@@ -48,7 +48,7 @@ export const PatientInsuranceCard: FC<PatientInsuranceCardProps> = (props) => {
                 >
                     <strong>Expenses</strong>
                     <strong style={{ float: 'right' }}>
-                        Rs. {props.patient.healthcareExpenses || 0}
+                        ${props.patient.healthcareExpenses || 0}
                     </strong>
                 </Typography.Text>
                 <VerticalSpace />
@@ -60,7 +60,7 @@ export const PatientInsuranceCard: FC<PatientInsuranceCardProps> = (props) => {
                     >
                         <strong>Coverage</strong>
                         <strong style={{ float: 'right' }}>
-                            Rs. {props.patient.healthCareCoverage || 0}
+                            ${props.patient.healthCareCoverage || 0}
                         </strong>
                     </Typography.Text>
                 </Col>

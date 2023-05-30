@@ -12,6 +12,7 @@ import { PatientCard } from '@library/card/PatientCard';
 import { PatientRiskData } from '@components/risk/risk.patient.service';
 import { PatientInsuranceCard } from '@library/card/PatientInsuranceCard';
 import { PatientDiagnosisCard } from '@library/card/PatientDiagnosisCard';
+import { useParams } from 'react-router-dom';
 
 const schema = yup.object().shape({
     diagnosis: yup.string().nullable(),
@@ -27,7 +28,13 @@ const _Plan = () => {
 
     const onFormValueChange = (changesValues: any, values: any) => {};
 
-    const patient = PatientRiskData[0];
+    let { id } = useParams();
+
+    const patient = PatientRiskData.find((x) => x.id === id);
+
+    if (!patient) {
+        return <div>Error finding patient details</div>;
+    }
 
     return (
         <BaseForm

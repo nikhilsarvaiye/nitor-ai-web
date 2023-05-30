@@ -3,13 +3,8 @@ import axios, { AxiosHeaders } from 'axios';
 import { requestHandler, successHandler, errorHandler } from './base.api.interceptor';
 
 const api = axios.create({
-    withCredentials: true,
     baseURL: process.env.REACT_APP_API_URL,
-    // baseURL: 'https://servaiyeretail-api.azurewebsites.net/',
 });
-
-// NS need to validate only for IE browser
-api.defaults.headers.Pragma = 'no-cache';
 
 api.interceptors.request.use((request) => requestHandler(request));
 
