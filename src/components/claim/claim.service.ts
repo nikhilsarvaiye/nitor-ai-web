@@ -6,7 +6,10 @@ import { QueryOptions } from 'odata-query';
 
 const data = [
     {
+        id: '81a701f2-ce1b-1119-171c-d939509ba8e5',
         patientId: '81a701f2-ce1b-1119-171c-d939509ba8e5',
+        firstName: 'Edwina',
+        lastName: 'Witting',
         type: 'PAYMENT',
         amount: '86.82',
         method: 'ECHECK',
@@ -34,7 +37,10 @@ const data = [
             '81a701f2 - ce1b - 1119 - 171c - d939509ba8e5	d3d9e4ab - b925 - 3cd7 - 81fb - 975367b1e72e',
     },
     {
-        patientId: '0a2015ef-73f4-f8b0-1c7b-e65004d41e4a',
+        id: '2a2015ef-73f4-f8b0-1c7b-e65004d41e4a',
+        patientId: '2a2015ef-73f4-f8b0-1c7b-e65004d41e4a',
+        firstName: 'Donny',
+        lastName: 'Welsch',
         type: 'CHARGE',
         amount: '21.14',
         method: 'COPAY',
@@ -61,7 +67,10 @@ const data = [
         providerId: '2da4cafa - 33b1 - 391e-8e68 - bcb61a09f571',
     },
     {
-        patientId: '8f1f14d4-3df2-110a-d30e-92bf2a22c6b2',
+        id: '2f1f14d4-3df2-110a-d30e-92bf2a22c6b2',
+        patientId: '2f1f14d4-3df2-110a-d30e-92bf2a22c6b2',
+        firstName: 'Iola',
+        lastName: 'Muller',
         type: 'PAYMENt',
         amount: '30.71',
         method: 'ECHECK',

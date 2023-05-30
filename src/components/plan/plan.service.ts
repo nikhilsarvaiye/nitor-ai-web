@@ -9,17 +9,17 @@ import { PatientRiskData } from '@components/risk/risk.patient.service';
 
 const data = [
     {
-        id: '81a701f2-ce1b-1119-171c-d939509ba8e5',
+        id: '11a701f2-ce1b-1119-171c-d939509ba8e5',
         patientName: 'Edwina Witting',
         createdDate: '25/5/2023',
     },
     {
-        id: '81a701f2-ce1b-1119-171c-d939509ba8e5',
+        id: '21a701f2-ce1b-1119-171c-d939509ba8e5',
         patientName: 'Donny Welsch',
         createdDate: '20/5/2023',
     },
     {
-        id: '81a701f2-ce1b-1119-171c-d939509ba8e5',
+        id: '31a701f2-ce1b-1119-171c-d939509ba8e5',
         patientName: 'Iola Muller',
         createdDate: '11/4/2023',
     },

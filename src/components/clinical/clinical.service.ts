@@ -6,7 +6,8 @@ import { QueryOptions } from 'odata-query';
 
 const data = [
     {
-        patientId: '27c02083-54f6-c520-c68a-9ef2387e128b',
+        id: '23461a0f-bef2-1a83-b336-6ba9fc8e5bed',
+        patientId: '37c02083-54f6-c520-c68a-9ef2387e128b',
         dob: '22-07-1949',
         age: '74',
         firstName: 'Edwina',
@@ -50,6 +51,7 @@ const data = [
             'Acute bronchitis(disorder), Chronic kidney disease stage 4(disorder), Awaiting transplantation of kidney(situation), Facial laceration, End - stage renal disease(disorder)',
     },
     {
+        id: '34461a0f-bef2-1a83-b336-6ba9fc8e5bed',
         patientId: 'baea9f26-8eab-58e0-8e2f-a91b5dbcb481',
         dob: '27-02-1960',
         age: '73',
@@ -96,7 +98,8 @@ const data = [
             'Sleep disorder(disorder), Chronic kidney disease stage 4(disorder), History of renal transplant(situation), Awaiting transplantation of kidney(situation), End - stage renal disease(disorder)',
     },
     {
-        patientId: '18461a0f-bef2-1a83-b336-6ba9fc8e5bed',
+        id: '18461a0f-bef2-1a83-b336-6ba9fc8e5bed',
+        patientId: '48461a0f-bef2-1a83-b336-6ba9fc8e5bed',
         dob: '30-05-1938',
         age: '85',
         firstName: 'Bill',
@@ -139,6 +142,7 @@ const data = [
         procedureReasonDesc: 'Acute viral pharyngitis(disorder)',
     },
     {
+        id: '15461a0f-bef2-1a83-b336-6ba9fc8e5bed',
         patientId: 'f4fb6b8e-c053-51e7-84cc-a90734291153',
         dob: '19-04-1945',
         age: '78',
@@ -182,6 +186,7 @@ const data = [
             'Ischemic heart disease(disorder), Abnormal findings diagnostic imaging heart + coronary circulat(finding), Dependent drug abuse(disorder), Acute bronchitis(disorder)',
     },
     {
+        id: '44461a0f-bef2-1a83-b336-6ba9fc8e5bed',
         patientId: '3056737b-11a7-5aed-3acb-5638ce7ab407',
         dob: '19-10-2000',
         age: '23',
@@ -220,6 +225,7 @@ const data = [
             'Acute bronchitis(disorder), Risk activity involvement(finding), Injury of medial collateral ligament of knee',
     },
     {
+        id: '90061a0f-bef2-1a83-b336-6ba9fc8e5bed',
         patientId: '40b8f37e-385d-857f-2db0-07c142a8e4a2',
         dob: '10/7/1990',
         age: '33',

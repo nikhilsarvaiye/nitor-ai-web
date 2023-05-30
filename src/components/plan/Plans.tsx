@@ -17,9 +17,9 @@ export const Plans = () => {
                     <Button
                         type="link"
                         onClick={() => {
-                            navigator(
-                                `/${planStore.titles.listName.toLocaleLowerCase()}/${record.id}`,
-                            );
+                            // navigator(
+                            //     `/${planStore.titles.listName.toLocaleLowerCase()}/${record.id}`,
+                            // );
                         }}
                     >
                         {value}

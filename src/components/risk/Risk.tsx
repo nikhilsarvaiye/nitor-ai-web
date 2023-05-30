@@ -24,11 +24,11 @@ const _RiskPatients = () => {
                     <Button
                         type="link"
                         onClick={() => {
-                            navigator(
-                                `/${riskPatientStore.titles.listName.toLocaleLowerCase()}/${
-                                    record.id
-                                }`,
-                            );
+                            // navigator(
+                            //     `/${riskPatientStore.titles.listName.toLocaleLowerCase()}/${
+                            //         record.id
+                            //     }`,
+                            // );
                         }}
                     >
                         {record.firstName} {record.lastName}

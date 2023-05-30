@@ -14,6 +14,17 @@ export const Claims = () => {
         //     width: 20,
         // },
         {
+            title: 'First Name',
+            dataIndex: 'firstName',
+            width: 10,
+        },
+
+        {
+            title: 'Last Name',
+            dataIndex: 'lastName',
+            width: 10,
+        },
+        {
             title: 'Type',
             dataIndex: 'type',
             width: 20,

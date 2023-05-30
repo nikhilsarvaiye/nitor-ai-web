@@ -49,9 +49,9 @@ const _Patients = () => {
                     <Button
                         type="link"
                         onClick={() => {
-                            navigator(
-                                `/${patientStore.titles.listName.toLocaleLowerCase()}/${record.id}`,
-                            );
+                            // navigator(
+                            //     `/${patientStore.titles.listName.toLocaleLowerCase()}/${record.id}`,
+                            // );
                         }}
                     >
                         {record.firstName} {record.lastName}
