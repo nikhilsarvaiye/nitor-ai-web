@@ -72,11 +72,13 @@ export class PlanService extends BaseService<PlanModel> implements IService<Plan
             longTermGoal:
                 data['Long-term Evaluation'] ||
                 data['Long Term Evaluation'] ||
-                data['Long term Evaluation'],
+                data['Long term Evaluation'] ||
+                data['Long-Term Evaluation'],
             shortTermGoal:
                 data['Short-term Evaluation'] ||
                 data['Short Term Evaluation'] ||
-                data['Short term Evaluation'],
+                data['Short term Evaluation'] ||
+                data['Short-Term Evaluation'],
             comments: '',
         } as any;
     };
