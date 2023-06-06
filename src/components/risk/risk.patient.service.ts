@@ -33,7 +33,7 @@ const data = [
         aCondCode: '162864005, 239872002, 48724000, 267020005, 706893006, 254837009',
         iCondDesc: 'Diabetes',
         aCondDesc:
-            'Malignant neoplasm of breast(disorder), Osteoarthritis of hip, History of tubal ligation(situation), Mitral valve regurgitation(disorder), Victim of intimate partner abuse(finding), Body mass index 30+ - obesity(finding)',
+            'Diabetes(disorder), Osteoarthritis of hip, History of tubal ligation(situation), Mitral valve regurgitation(disorder), Victim of intimate partner abuse(finding), Body mass index 30+ - obesity(finding)',
         iMedCode: '\t745752, 313782, 849574, 896001',
         aMedCode: '745752, 896001',
         iMedDesc:
@@ -47,7 +47,7 @@ const data = [
             '310417005,410401003, 46706006, 449381000124108, 84478008, 710841007, 385763009, 312681000, 866148006, 225386006, 71651007, 409023009, 763302001, 710824005, 433236007, 428211000124100, 713106006, 430193006, 370789001, 171207006, 25656009, 58000006, 91251008, 181087000, 315639002, 63332003, 762993000, 454711000124102, 73761001',
         procedureDesc:
             'Assessment using Morse Fall Scale(procedure), Nursing care/ supplementary surveillance(regime / therapy), Bone density scan(procedure), Physical examination  complete(procedure), Mammography(procedure), Replacement of contraceptive intrauterine device, Depression screening using Patient Health Questionnaire Two - Item score(procedure), Physical therapy procedure(regime / therapy), Screening for domestic abuse(procedure), Assessment using Alcohol Use Disorders Identification Test - Consumption(procedure), Assessment of anxiety(procedure), Patient discharge(procedure), Occupational therapy(regime / therapy), Colonoscopy, History AND physical examination(procedure), Professional / ancillary services care(regime / therapy), Development of individualized plan of care(procedure), Assessment of health and social care needs(procedure), Discharge from skilled nursing facility(procedure), Notifications(procedure), Hospice care(regime / therapy), Depression screening(procedure), Medication Reconciliation(procedure), Certification procedure(procedure), Transthoracic echocardiography(procedure), Assessment of substance use(procedure), Screening for drug abuse(procedure), Pre - discharge assessment(procedure), Initial patient assessment(procedure)',
-        procedureReasonDesc: 'Malignant neoplasm of breast(disorder)\t',
+        procedureReasonDesc: 'Diabetes(disorder)\t',
         risk: 'High',
     },
     {
@@ -78,7 +78,7 @@ const data = [
         aCondCode: '162864005, 239872002, 48724000, 267020005, 706893006, 254837009',
         iCondDesc: 'Diabetes',
         aCondDesc:
-            'Malignant neoplasm of breast(disorder), Osteoarthritis of hip, History of tubal ligation(situation), Mitral valve regurgitation(disorder), Victim of intimate partner abuse(finding), Body mass index 30+ - obesity(finding)',
+            'Diabetes(disorder), Osteoarthritis of hip, History of tubal ligation(situation), Mitral valve regurgitation(disorder), Victim of intimate partner abuse(finding), Body mass index 30+ - obesity(finding)',
         iMedCode: '\t745752, 313782, 849574, 896001',
         aMedCode: '745752, 896001',
         iMedDesc:
@@ -92,7 +92,7 @@ const data = [
             '310417005,410401003, 46706006, 449381000124108, 84478008, 710841007, 385763009, 312681000, 866148006, 225386006, 71651007, 409023009, 763302001, 710824005, 433236007, 428211000124100, 713106006, 430193006, 370789001, 171207006, 25656009, 58000006, 91251008, 181087000, 315639002, 63332003, 762993000, 454711000124102, 73761001',
         procedureDesc:
             'Assessment using Morse Fall Scale(procedure), Nursing care/ supplementary surveillance(regime / therapy), Bone density scan(procedure), Physical examination  complete(procedure), Mammography(procedure), Replacement of contraceptive intrauterine device, Depression screening using Patient Health Questionnaire Two - Item score(procedure), Physical therapy procedure(regime / therapy), Screening for domestic abuse(procedure), Assessment using Alcohol Use Disorders Identification Test - Consumption(procedure), Assessment of anxiety(procedure), Patient discharge(procedure), Occupational therapy(regime / therapy), Colonoscopy, History AND physical examination(procedure), Professional / ancillary services care(regime / therapy), Development of individualized plan of care(procedure), Assessment of health and social care needs(procedure), Discharge from skilled nursing facility(procedure), Notifications(procedure), Hospice care(regime / therapy), Depression screening(procedure), Medication Reconciliation(procedure), Certification procedure(procedure), Transthoracic echocardiography(procedure), Assessment of substance use(procedure), Screening for drug abuse(procedure), Pre - discharge assessment(procedure), Initial patient assessment(procedure)',
-        procedureReasonDesc: 'Malignant neoplasm of breast(disorder)\t',
+        procedureReasonDesc: 'Diabetes(disorder)\t',
         risk: 'Low',
     },
     {
@@ -123,7 +123,7 @@ const data = [
         aCondCode: '162864005, 239872002, 48724000, 267020005, 706893006, 254837009',
         iCondDesc: 'Diabetes',
         aCondDesc:
-            'Malignant neoplasm of breast(disorder), Osteoarthritis of hip, History of tubal ligation(situation), Mitral valve regurgitation(disorder), Victim of intimate partner abuse(finding), Body mass index 30+ - obesity(finding)',
+            'Diabetes(disorder), Osteoarthritis of hip, History of tubal ligation(situation), Mitral valve regurgitation(disorder), Victim of intimate partner abuse(finding), Body mass index 30+ - obesity(finding)',
         iMedCode: '\t745752, 313782, 849574, 896001',
         aMedCode: '745752, 896001',
         iMedDesc:
@@ -137,7 +137,7 @@ const data = [
             '310417005,410401003, 46706006, 449381000124108, 84478008, 710841007, 385763009, 312681000, 866148006, 225386006, 71651007, 409023009, 763302001, 710824005, 433236007, 428211000124100, 713106006, 430193006, 370789001, 171207006, 25656009, 58000006, 91251008, 181087000, 315639002, 63332003, 762993000, 454711000124102, 73761001',
         procedureDesc:
             'Assessment using Morse Fall Scale(procedure), Nursing care/ supplementary surveillance(regime / therapy), Bone density scan(procedure), Physical examination  complete(procedure), Mammography(procedure), Replacement of contraceptive intrauterine device, Depression screening using Patient Health Questionnaire Two - Item score(procedure), Physical therapy procedure(regime / therapy), Screening for domestic abuse(procedure), Assessment using Alcohol Use Disorders Identification Test - Consumption(procedure), Assessment of anxiety(procedure), Patient discharge(procedure), Occupational therapy(regime / therapy), Colonoscopy, History AND physical examination(procedure), Professional / ancillary services care(regime / therapy), Development of individualized plan of care(procedure), Assessment of health and social care needs(procedure), Discharge from skilled nursing facility(procedure), Notifications(procedure), Hospice care(regime / therapy), Depression screening(procedure), Medication Reconciliation(procedure), Certification procedure(procedure), Transthoracic echocardiography(procedure), Assessment of substance use(procedure), Screening for drug abuse(procedure), Pre - discharge assessment(procedure), Initial patient assessment(procedure)',
-        procedureReasonDesc: 'Malignant neoplasm of breast(disorder)\t',
+        procedureReasonDesc: 'Diabetes(disorder)\t',
         risk: 'High',
     },
     {
@@ -168,7 +168,7 @@ const data = [
         aCondCode: '162864005, 239872002, 48724000, 267020005, 706893006, 254837009',
         iCondDesc: 'Diabetes',
         aCondDesc:
-            'Malignant neoplasm of breast(disorder), Osteoarthritis of hip, History of tubal ligation(situation), Mitral valve regurgitation(disorder), Victim of intimate partner abuse(finding), Body mass index 30+ - obesity(finding)',
+            'Diabetes(disorder), Osteoarthritis of hip, History of tubal ligation(situation), Mitral valve regurgitation(disorder), Victim of intimate partner abuse(finding), Body mass index 30+ - obesity(finding)',
         iMedCode: '\t745752, 313782, 849574, 896001',
         aMedCode: '745752, 896001',
         iMedDesc:
@@ -182,7 +182,7 @@ const data = [
             '310417005,410401003, 46706006, 449381000124108, 84478008, 710841007, 385763009, 312681000, 866148006, 225386006, 71651007, 409023009, 763302001, 710824005, 433236007, 428211000124100, 713106006, 430193006, 370789001, 171207006, 25656009, 58000006, 91251008, 181087000, 315639002, 63332003, 762993000, 454711000124102, 73761001',
         procedureDesc:
             'Assessment using Morse Fall Scale(procedure), Nursing care/ supplementary surveillance(regime / therapy), Bone density scan(procedure), Physical examination  complete(procedure), Mammography(procedure), Replacement of contraceptive intrauterine device, Depression screening using Patient Health Questionnaire Two - Item score(procedure), Physical therapy procedure(regime / therapy), Screening for domestic abuse(procedure), Assessment using Alcohol Use Disorders Identification Test - Consumption(procedure), Assessment of anxiety(procedure), Patient discharge(procedure), Occupational therapy(regime / therapy), Colonoscopy, History AND physical examination(procedure), Professional / ancillary services care(regime / therapy), Development of individualized plan of care(procedure), Assessment of health and social care needs(procedure), Discharge from skilled nursing facility(procedure), Notifications(procedure), Hospice care(regime / therapy), Depression screening(procedure), Medication Reconciliation(procedure), Certification procedure(procedure), Transthoracic echocardiography(procedure), Assessment of substance use(procedure), Screening for drug abuse(procedure), Pre - discharge assessment(procedure), Initial patient assessment(procedure)',
-        procedureReasonDesc: 'Malignant neoplasm of breast(disorder)\t',
+        procedureReasonDesc: 'Diabetes(disorder)\t',
         risk: 'High',
     },
     {
@@ -214,7 +214,7 @@ const data = [
         iCondDesc:
             'Whiplash injury to neck, Acute bronchitis(disorder), Viral sinusitis(disorder), Limited social contact(finding), Social isolation(finding), Stress(finding)',
         aCondDesc:
-            'Malignant neoplasm of breast(disorder), Osteoarthritis of hip, History of tubal ligation(situation), Mitral valve regurgitation(disorder), Victim of intimate partner abuse(finding), Body mass index 30+ - obesity(finding)',
+            'Diabetes(disorder), Osteoarthritis of hip, History of tubal ligation(situation), Mitral valve regurgitation(disorder), Victim of intimate partner abuse(finding), Body mass index 30+ - obesity(finding)',
         iMedCode: '\t745752, 313782, 849574, 896001',
         aMedCode: '745752, 896001',
         iMedDesc:
@@ -228,7 +228,7 @@ const data = [
             '310417005,410401003, 46706006, 449381000124108, 84478008, 710841007, 385763009, 312681000, 866148006, 225386006, 71651007, 409023009, 763302001, 710824005, 433236007, 428211000124100, 713106006, 430193006, 370789001, 171207006, 25656009, 58000006, 91251008, 181087000, 315639002, 63332003, 762993000, 454711000124102, 73761001',
         procedureDesc:
             'Assessment using Morse Fall Scale(procedure), Nursing care/ supplementary surveillance(regime / therapy), Bone density scan(procedure), Physical examination  complete(procedure), Mammography(procedure), Replacement of contraceptive intrauterine device, Depression screening using Patient Health Questionnaire Two - Item score(procedure), Physical therapy procedure(regime / therapy), Screening for domestic abuse(procedure), Assessment using Alcohol Use Disorders Identification Test - Consumption(procedure), Assessment of anxiety(procedure), Patient discharge(procedure), Occupational therapy(regime / therapy), Colonoscopy, History AND physical examination(procedure), Professional / ancillary services care(regime / therapy), Development of individualized plan of care(procedure), Assessment of health and social care needs(procedure), Discharge from skilled nursing facility(procedure), Notifications(procedure), Hospice care(regime / therapy), Depression screening(procedure), Medication Reconciliation(procedure), Certification procedure(procedure), Transthoracic echocardiography(procedure), Assessment of substance use(procedure), Screening for drug abuse(procedure), Pre - discharge assessment(procedure), Initial patient assessment(procedure)',
-        procedureReasonDesc: 'Malignant neoplasm of breast(disorder)\t',
+        procedureReasonDesc: 'Diabetes(disorder)\t',
         risk: 'Medium',
     },
 ];
