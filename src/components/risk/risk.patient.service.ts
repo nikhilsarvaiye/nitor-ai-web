@@ -31,8 +31,7 @@ const data = [
         allergiesReaction: '',
         iCondCode: '73591000, 444814009,422610009, 423311002, 39848009, 10109002',
         aCondCode: '162864005, 239872002, 48724000, 267020005, 706893006, 254837009',
-        iCondDesc:
-            'Whiplash injury to neck, Acute bronchitis(disorder), Viral sinusitis(disorder), Limited social contact(finding), Social isolation(finding), Stress(finding)',
+        iCondDesc: 'Diabetes',
         aCondDesc:
             'Malignant neoplasm of breast(disorder), Osteoarthritis of hip, History of tubal ligation(situation), Mitral valve regurgitation(disorder), Victim of intimate partner abuse(finding), Body mass index 30+ - obesity(finding)',
         iMedCode: '\t745752, 313782, 849574, 896001',
@@ -49,7 +48,7 @@ const data = [
         procedureDesc:
             'Assessment using Morse Fall Scale(procedure), Nursing care/ supplementary surveillance(regime / therapy), Bone density scan(procedure), Physical examination  complete(procedure), Mammography(procedure), Replacement of contraceptive intrauterine device, Depression screening using Patient Health Questionnaire Two - Item score(procedure), Physical therapy procedure(regime / therapy), Screening for domestic abuse(procedure), Assessment using Alcohol Use Disorders Identification Test - Consumption(procedure), Assessment of anxiety(procedure), Patient discharge(procedure), Occupational therapy(regime / therapy), Colonoscopy, History AND physical examination(procedure), Professional / ancillary services care(regime / therapy), Development of individualized plan of care(procedure), Assessment of health and social care needs(procedure), Discharge from skilled nursing facility(procedure), Notifications(procedure), Hospice care(regime / therapy), Depression screening(procedure), Medication Reconciliation(procedure), Certification procedure(procedure), Transthoracic echocardiography(procedure), Assessment of substance use(procedure), Screening for drug abuse(procedure), Pre - discharge assessment(procedure), Initial patient assessment(procedure)',
         procedureReasonDesc: 'Malignant neoplasm of breast(disorder)\t',
-        risk: 'High'
+        risk: 'High',
     },
     {
         id: '0a2015ef-73f4-f8b0-1c7b-e65004d41e4a',
@@ -77,8 +76,7 @@ const data = [
         allergiesReaction: '',
         iCondCode: '73591000, 444814009,422610009, 423311002, 39848009, 10109002',
         aCondCode: '162864005, 239872002, 48724000, 267020005, 706893006, 254837009',
-        iCondDesc:
-            'Whiplash injury to neck, Acute bronchitis(disorder), Viral sinusitis(disorder), Limited social contact(finding), Social isolation(finding), Stress(finding)',
+        iCondDesc: 'Diabetes',
         aCondDesc:
             'Malignant neoplasm of breast(disorder), Osteoarthritis of hip, History of tubal ligation(situation), Mitral valve regurgitation(disorder), Victim of intimate partner abuse(finding), Body mass index 30+ - obesity(finding)',
         iMedCode: '\t745752, 313782, 849574, 896001',
@@ -95,7 +93,7 @@ const data = [
         procedureDesc:
             'Assessment using Morse Fall Scale(procedure), Nursing care/ supplementary surveillance(regime / therapy), Bone density scan(procedure), Physical examination  complete(procedure), Mammography(procedure), Replacement of contraceptive intrauterine device, Depression screening using Patient Health Questionnaire Two - Item score(procedure), Physical therapy procedure(regime / therapy), Screening for domestic abuse(procedure), Assessment using Alcohol Use Disorders Identification Test - Consumption(procedure), Assessment of anxiety(procedure), Patient discharge(procedure), Occupational therapy(regime / therapy), Colonoscopy, History AND physical examination(procedure), Professional / ancillary services care(regime / therapy), Development of individualized plan of care(procedure), Assessment of health and social care needs(procedure), Discharge from skilled nursing facility(procedure), Notifications(procedure), Hospice care(regime / therapy), Depression screening(procedure), Medication Reconciliation(procedure), Certification procedure(procedure), Transthoracic echocardiography(procedure), Assessment of substance use(procedure), Screening for drug abuse(procedure), Pre - discharge assessment(procedure), Initial patient assessment(procedure)',
         procedureReasonDesc: 'Malignant neoplasm of breast(disorder)\t',
-        risk: 'Low'
+        risk: 'Low',
     },
     {
         id: '8f1f14d4-3df2-110a-d30e-92bf2a22c6b2',
@@ -123,8 +121,7 @@ const data = [
         allergiesReaction: '',
         iCondCode: '73591000, 444814009,422610009, 423311002, 39848009, 10109002',
         aCondCode: '162864005, 239872002, 48724000, 267020005, 706893006, 254837009',
-        iCondDesc:
-            'Whiplash injury to neck, Acute bronchitis(disorder), Viral sinusitis(disorder), Limited social contact(finding), Social isolation(finding), Stress(finding)',
+        iCondDesc: 'Diabetes',
         aCondDesc:
             'Malignant neoplasm of breast(disorder), Osteoarthritis of hip, History of tubal ligation(situation), Mitral valve regurgitation(disorder), Victim of intimate partner abuse(finding), Body mass index 30+ - obesity(finding)',
         iMedCode: '\t745752, 313782, 849574, 896001',
@@ -141,7 +138,7 @@ const data = [
         procedureDesc:
             'Assessment using Morse Fall Scale(procedure), Nursing care/ supplementary surveillance(regime / therapy), Bone density scan(procedure), Physical examination  complete(procedure), Mammography(procedure), Replacement of contraceptive intrauterine device, Depression screening using Patient Health Questionnaire Two - Item score(procedure), Physical therapy procedure(regime / therapy), Screening for domestic abuse(procedure), Assessment using Alcohol Use Disorders Identification Test - Consumption(procedure), Assessment of anxiety(procedure), Patient discharge(procedure), Occupational therapy(regime / therapy), Colonoscopy, History AND physical examination(procedure), Professional / ancillary services care(regime / therapy), Development of individualized plan of care(procedure), Assessment of health and social care needs(procedure), Discharge from skilled nursing facility(procedure), Notifications(procedure), Hospice care(regime / therapy), Depression screening(procedure), Medication Reconciliation(procedure), Certification procedure(procedure), Transthoracic echocardiography(procedure), Assessment of substance use(procedure), Screening for drug abuse(procedure), Pre - discharge assessment(procedure), Initial patient assessment(procedure)',
         procedureReasonDesc: 'Malignant neoplasm of breast(disorder)\t',
-        risk: 'High'
+        risk: 'High',
     },
     {
         id: '7f1f14d4-3df2-110a-d30e-92bf2a22c6b2',
@@ -169,8 +166,7 @@ const data = [
         allergiesReaction: '',
         iCondCode: '73591000, 444814009,422610009, 423311002, 39848009, 10109002',
         aCondCode: '162864005, 239872002, 48724000, 267020005, 706893006, 254837009',
-        iCondDesc:
-            'Whiplash injury to neck, Acute bronchitis(disorder), Viral sinusitis(disorder), Limited social contact(finding), Social isolation(finding), Stress(finding)',
+        iCondDesc: 'Diabetes',
         aCondDesc:
             'Malignant neoplasm of breast(disorder), Osteoarthritis of hip, History of tubal ligation(situation), Mitral valve regurgitation(disorder), Victim of intimate partner abuse(finding), Body mass index 30+ - obesity(finding)',
         iMedCode: '\t745752, 313782, 849574, 896001',
@@ -187,7 +183,7 @@ const data = [
         procedureDesc:
             'Assessment using Morse Fall Scale(procedure), Nursing care/ supplementary surveillance(regime / therapy), Bone density scan(procedure), Physical examination  complete(procedure), Mammography(procedure), Replacement of contraceptive intrauterine device, Depression screening using Patient Health Questionnaire Two - Item score(procedure), Physical therapy procedure(regime / therapy), Screening for domestic abuse(procedure), Assessment using Alcohol Use Disorders Identification Test - Consumption(procedure), Assessment of anxiety(procedure), Patient discharge(procedure), Occupational therapy(regime / therapy), Colonoscopy, History AND physical examination(procedure), Professional / ancillary services care(regime / therapy), Development of individualized plan of care(procedure), Assessment of health and social care needs(procedure), Discharge from skilled nursing facility(procedure), Notifications(procedure), Hospice care(regime / therapy), Depression screening(procedure), Medication Reconciliation(procedure), Certification procedure(procedure), Transthoracic echocardiography(procedure), Assessment of substance use(procedure), Screening for drug abuse(procedure), Pre - discharge assessment(procedure), Initial patient assessment(procedure)',
         procedureReasonDesc: 'Malignant neoplasm of breast(disorder)\t',
-        risk: 'High'
+        risk: 'High',
     },
     {
         id: '6f1f14d4-3df2-110a-d30e-92bf2a22c6b2',
@@ -233,11 +229,14 @@ const data = [
         procedureDesc:
             'Assessment using Morse Fall Scale(procedure), Nursing care/ supplementary surveillance(regime / therapy), Bone density scan(procedure), Physical examination  complete(procedure), Mammography(procedure), Replacement of contraceptive intrauterine device, Depression screening using Patient Health Questionnaire Two - Item score(procedure), Physical therapy procedure(regime / therapy), Screening for domestic abuse(procedure), Assessment using Alcohol Use Disorders Identification Test - Consumption(procedure), Assessment of anxiety(procedure), Patient discharge(procedure), Occupational therapy(regime / therapy), Colonoscopy, History AND physical examination(procedure), Professional / ancillary services care(regime / therapy), Development of individualized plan of care(procedure), Assessment of health and social care needs(procedure), Discharge from skilled nursing facility(procedure), Notifications(procedure), Hospice care(regime / therapy), Depression screening(procedure), Medication Reconciliation(procedure), Certification procedure(procedure), Transthoracic echocardiography(procedure), Assessment of substance use(procedure), Screening for drug abuse(procedure), Pre - discharge assessment(procedure), Initial patient assessment(procedure)',
         procedureReasonDesc: 'Malignant neoplasm of breast(disorder)\t',
-        risk: 'Medium'
+        risk: 'Medium',
     },
-]
+];
 
-export class RiskPatientService extends BaseService<PatientModel> implements IService<PatientModel> {
+export class RiskPatientService
+    extends BaseService<PatientModel>
+    implements IService<PatientModel>
+{
     constructor() {
         super('Patient', 'patient');
     }
@@ -250,7 +249,7 @@ export class RiskPatientService extends BaseService<PatientModel> implements ISe
             items: data as any,
         };
 
-        return new Promise((res) => setTimeout(() => res(pageData), 4000))
+        return new Promise((res) => setTimeout(() => res(pageData), 4000));
     };
 }
 

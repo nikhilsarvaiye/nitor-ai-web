@@ -48,7 +48,7 @@ export class PlanService extends BaseService<PlanModel> implements IService<Plan
         }
         // const url = 'http://127.0.0.1:5000/generate_treatment_plan';
         const url = 'https://nitor-ai-api.azurewebsites.net/generate_treatment_plan';
-        const response = await Api.post<PlanModel[]>(url, {
+        const response = await Api.post<PlanModel>(url, {
             PATIENTID: id,
             FIRST: patient.firstName,
             LAST: patient.lastName,
@@ -61,7 +61,7 @@ export class PlanService extends BaseService<PlanModel> implements IService<Plan
             ALLERGIES_DESC: patient.allergiesDesc,
             PROCEDURE_DESCRIPTION: patient.procedureDesc,
         });
-        const data = response.data?.length ? (response.data[0] as any) : null;
+        const data = response.data as any;
         if (!data) {
             return null;
         }
