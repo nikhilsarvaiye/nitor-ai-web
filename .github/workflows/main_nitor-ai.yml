@@ -21,6 +21,10 @@ jobs:
         with:
           node-version: '18.x'
 
+      - name: npm install craco
+        run: |
+          npm install -g @craco/craco
+      
       - name: npm install, build
         run: |
           npm install
