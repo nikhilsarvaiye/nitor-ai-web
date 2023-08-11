@@ -3,7 +3,7 @@ import axios, { AxiosHeaders } from 'axios';
 import { requestHandler, successHandler, errorHandler } from './base.api.interceptor';
 
 const api = axios.create({
-    baseURL: process.env.REACT_APP_API_URL,
+    baseURL: process.env.API_URL,
 });
 
 api.interceptors.request.use((request) => requestHandler(request));
