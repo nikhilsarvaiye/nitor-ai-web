@@ -21,9 +21,9 @@ jobs:
         with:
           node-version: '18.x'
 
-      - name: npm install craco
+      - name: npm install globals
         run: |
-          npm install -g @craco/craco
+          npm install -g typescript @craco/craco @craco/types
       
       - name: npm install, build
         run: |
