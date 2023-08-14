@@ -3,7 +3,7 @@ import { CracoConfig } from '@craco/types';
 const CracoAlias = require('craco-alias');
 const sassResourcesLoader = require('craco-sass-resources-loader');
 
-const config = {
+const config: CracoConfig = {
     webpack: {
         alias: {
             '@components': path.resolve(__dirname, 'src/components'),
