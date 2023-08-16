@@ -46,7 +46,8 @@ export class PlanService extends BaseService<PlanModel> implements IService<Plan
         if (!patient) {
             return null;
         }
-        const url = process.env.AI_API_URL?.toString() || '';
+        // const url = process.env.AI_API_URL?.toString() || '';
+        const url = 'https://nitor-health-ai-ml-api.purpletree-ab9eb4f0.southeastasia.azurecontainerapps.io';
         const response = await Api.post<PlanModel>(url, {
             PATIENTID: id,
             FIRST: patient.firstName,
